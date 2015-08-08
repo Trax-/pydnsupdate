@@ -28,7 +28,7 @@ class DbData(object):
         )
 
     def getcurrent(self):
-        self.cursorquery.execute("SELECT * FROM lastaddress")
+        self.cursorquery.execute("SELECT * FROM latest")
         return self.cursorquery
 
     def savenew(self, routerid, routeraddress):
