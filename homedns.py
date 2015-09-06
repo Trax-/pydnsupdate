@@ -1,8 +1,8 @@
-__author__ = 'tlo'
-
 import dns.resolver
 import dns.query
 import dns.update
+
+__author__ = 'tlo'
 
 
 def lookup(hostname):
