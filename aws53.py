@@ -1,22 +1,66 @@
+from boto3.session import Session
+
 __author__ = 'tlo'
 
-import route53
+
+def get_hosted_zone(key, password, base_url):
+    pass
 
 
-def update(name, router_address):
-    conn = route53.connect(
-        aws_access_key_id='AKIAJCZTOPIGRZTB7A7Q',
-        aws_secret_access_key='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'
-    )
+def get_hosted_zone_count(client):
+    return client.get_hosted_zone_count()['HostedZoneCount']
 
-    zone = conn.get_hosted_zone_by_id('Z385NZ78OP57MX')  # ocsnet.info zone id
 
-    name_to_match = name + '.ocsnet.info.'
+def list_hosted_zones(client):
+    return client.list_hosted_zones()
 
-    for record_set in zone.record_sets:
-        if record_set.name == name_to_match:
-            record_set.values = router_address
-            record_set.save()
-            print(record_set)
-            print(record_set.records)
-            break
+
+def list_resource_record_sets(client, zone_id):
+    return client.list_resource_record_sets(HostedZoneId=zone_id)
+
+
+def update(db, router_name, new_address):
+    key, password, base_url = db.get_api_key('AWS_Route53')
+
+    route53 = get_session_client(key, password)
+
+    names = db.get_names_to_update_aws(router_name, new_address)
+
+    if names is None:
+        print("No updates to process")
+        return
+
+    changes = []
+    count = 0
+
+    for name in names:
+        zone_id = name[4]
+        changes.append({
+            'Action': 'UPSERT',
+            'ResourceRecordSet': {
+                'Name': name[0],
+                'Type': name[1],
+                'TTL': name[2],
+                'ResourceRecords': [{'Value': new_address}]
+            }
+        })
+
+        try:
+            if count + 1 <= len(names) and zone_id != names[count + 1][4]:
+                batch = {'Comment': 'Change by pyDNSUpdate issued by OCSNET', 'Changes': changes}
+
+                reply = route53.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch=batch)
+                changes = []
+        except IndexError:
+            batch = {'Comment': 'Change by pyDNSUpdate issued by OCSNET', 'Changes': changes}
+            reply = route53.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch=batch)
+
+        count += 1
+        if reply['ResponseMetadata']['HTTPStatusCode'] == 200:
+            db.update_aws_values(name[3], new_address, reply['ChangeInfo']['SubmittedAt'])
+    db.db.commit()
+
+
+def get_session_client(key, password):
+    aws = Session(aws_access_key_id=key, aws_secret_access_key=password)
+    return aws.client('route53')

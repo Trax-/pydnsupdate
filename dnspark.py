@@ -1,24 +1,51 @@
+import requests as req
+
 __author__ = 'Trevor Obermann'
 
-import json
 
-import requests
+def get_domain_data(key, password, base_url, domain_name):
+    js = req.get(base_url + domain_name, auth=(key, password)).json()
 
-API_key = 'AAb619912c519ef1786a6372f6e1ed77c5'
-API_Token = '8a3786d1b9504086e8e3573642489c8caae03b3a'
-my_url = 'https://api.dnspark.com/v2/dns/'
-ns1_id = '14205172'  # ns1.ocsnet.com
-ns2_id = '14205174'  # ns2.ocsnet.com
-ns3_id = '14205176'  # ns3.ocsnet.com
-domain_record_id = '14250700'  # ocsnet.com or @
-domain_id = '477674'
+    if js['message'] == 'OK':
+        return js['records']
 
-payload = {'rname': 'ocsnet.com', 'rtype': 'A', 'ttl': '60', 'rdata': '74.248.229.45', 'dynamic': 'Y'}
 
-r = requests.get(my_url + domain_record_id, auth=(API_key, API_Token))
+def get_record_data(key, password, base_url, record_id):
+    js = req.get(base_url + str(record_id), auth=(key, password)).json()
 
-# r = requests.post(my_url + domain_id, data=json.dumps(payload),
-#                  auth=('AAb619912c519ef1786a6372f6e1ed77c5', '8a3786d1b9504086e8e3573642489c8caae03b3a'))
+    if js['message'] == 'OK':
+        return js['records'][0]  # Should only ever be one record
 
-print(json.dumps(payload))
-print(r.json())
+
+def delete_record(db, key, password, base_url, record_id):
+    js = req.delete(base_url + str(record_id), auth=(key, password)).json()
+
+    if js['status'] == 200:
+        print(js['message'])
+        db.delete_record_dnspark(record_id)
+    else:
+        print(js['message'])
+
+
+def update(db, router_name, new_address):
+    key, password, base_url = db.get_api_key('DNS_Park')
+
+    names = db.get_names_to_update_dnspark(router_name, new_address)
+
+    if names is not None:
+        for (rname, rtype, ttl, dynamic, record_id) in names:
+
+            put_data = {'rname': rname + '.ocsnet.com', 'rtype': rtype, 'ttl': str(ttl), 'rdata': new_address,
+                        'dynamic': dynamic}
+
+            js = req.put(base_url + str(record_id), json=put_data, auth=(key, password)).json()
+
+            if js['status'] == 200:
+                last_update = js['records'][0]['last_update'].replace('T', ' ').replace('Z', '')
+
+                db.save_new_dnspark(record_id, new_address, last_update)
+                print(js['message'])
+            else:
+                print(js['message'])
+    else:
+        print('No dnspark update needed')
