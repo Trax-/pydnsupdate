@@ -2,8 +2,7 @@ import mysql.connector
 from mysql.connector import connect
 from mysql.connector import errorcode
 
-import aws53
-import dnspark
+from pydnsupdate import dnspark, aws53
 
 __author__ = 'tlo'
 
@@ -192,7 +191,7 @@ class DbData(object):
 
     def insert_zone_aws(self, zones):
 
-        sql = ("INSERT IGNORE INTO AWS_Route53_zones (zone_id, name, record_count, private_zone, comment) "
+        sql = ("REPLACE INTO AWS_Route53_zones (zone_id, name, record_count, private_zone, comment) "
                "VALUES (%s, %s, %s, %s, %s)")
 
         for zone in zones['HostedZones']:

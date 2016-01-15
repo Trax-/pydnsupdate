@@ -1,39 +1,43 @@
-CREATE TABLE AWS_Route53
-(
-  record_id      MEDIUMINT(8) UNSIGNED PRIMARY KEY                                         NOT NULL
-  COMMENT 'hostname record id',
-  name           VARCHAR(60)                                                               NOT NULL,
-  type           ENUM('SOA', 'A', 'TXT', 'NS', 'CNAME', 'MX', 'PTR', 'SRV', 'SPF', 'AAAA') NOT NULL
-  COMMENT 'RR type',
-  ttl            INT(11),
-  hosted_zone_id MEDIUMINT(8) UNSIGNED                                                     NOT NULL
-  COMMENT 'Hosted zone id each domain',
-  CONSTRAINT AWS_Route53_ibfk_1 FOREIGN KEY (hosted_zone_id) REFERENCES AWS_Route53_zones (record_id)
-);
-CREATE UNIQUE INDEX hosted_zone_id ON AWS_Route53 (hosted_zone_id);
-CREATE UNIQUE INDEX record_id ON AWS_Route53 (record_id);
-
-CREATE TABLE AWS_Route53_values
-(
-  value_id      INT(11) PRIMARY KEY   NOT NULL,
-  AWS_record_id MEDIUMINT(8) UNSIGNED NOT NULL,
-  value         VARCHAR(256)          NOT NULL,
-  last_update   DATETIME,
-  CONSTRAINT AWS_Route53_values_ibfk_1 FOREIGN KEY (AWS_record_id) REFERENCES AWS_Route53 (record_id)
-);
-CREATE UNIQUE INDEX AWS_record_id ON AWS_Route53_values (AWS_record_id);
+DROP TABLE IF EXISTS AWS_Route53_values;
+DROP TABLE IF EXISTS AWS_Route53;
+DROP TABLE IF EXISTS AWS_Route53_zones;
 
 CREATE TABLE AWS_Route53_zones
 (
-  record_id    MEDIUMINT(8) UNSIGNED PRIMARY KEY NOT NULL,
+  record_id    MEDIUMINT UNSIGNED    AUTO_INCREMENT UNIQUE NOT NULL,
   zone_id      VARCHAR(26),
-  name         VARCHAR(12)                       NOT NULL,
-  record_count TINYINT(4)                        NOT NULL,
+  name         VARCHAR(12)                                 NOT NULL,
+  record_count TINYINT(4)                                  NOT NULL,
   private_zone ENUM('TRUE', 'FALSE') DEFAULT 'False',
   comment      VARCHAR(50)
 );
-CREATE UNIQUE INDEX record_id ON AWS_Route53_zones (record_id);
-CREATE UNIQUE INDEX zone_id ON AWS_Route53_zones (zone_id);
+CREATE INDEX record_id_idx ON AWS_Route53_zones (record_id);
+CREATE INDEX zone_id ON AWS_Route53_zones (zone_id);
+
+CREATE TABLE AWS_Route53
+(
+  record_id      MEDIUMINT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY                                         NOT NULL
+  COMMENT 'hostname record id',
+  name           VARCHAR(60)                                                                              NOT NULL,
+  type           ENUM('SOA', 'A', 'TXT', 'NS', 'CNAME', 'MX', 'PTR', 'SRV', 'SPF', 'AAAA')                NOT NULL
+  COMMENT 'RR type',
+  ttl            INT(11),
+  hosted_zone_id MEDIUMINT(8) UNSIGNED                                                                    NOT NULL
+  COMMENT 'Hosted zone id each domain',
+  CONSTRAINT AWS_Route53_ibfk_1 FOREIGN KEY (hosted_zone_id) REFERENCES AWS_Route53_zones (record_id)
+);
+CREATE INDEX hosted_zone_id ON AWS_Route53 (hosted_zone_id);
+CREATE INDEX record_id ON AWS_Route53 (record_id);
+
+CREATE TABLE AWS_Route53_values
+(
+  value_id      INT(11) AUTO_INCREMENT PRIMARY KEY   NOT NULL,
+  AWS_record_id MEDIUMINT(8) UNSIGNED                NOT NULL,
+  value         VARCHAR(256)                         NOT NULL,
+  last_update   DATETIME,
+  CONSTRAINT AWS_Route53_values_ibfk_1 FOREIGN KEY (AWS_record_id) REFERENCES AWS_Route53 (record_id)
+);
+CREATE INDEX AWS_record_id ON AWS_Route53_values (AWS_record_id);
 
 CREATE TABLE DNS_Park
 (
