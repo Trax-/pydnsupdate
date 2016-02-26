@@ -20,11 +20,17 @@ def update(db, host_name, new_address):
 
     for name in names:
 
+        if name[0] == 'ocsnet.com':
+            continue
+
         fqdn = name[0] + '.ocsnet.com.'
 
         answer = lookup(fqdn)
 
         if answer.rrset.items[0].address != new_address:
+            if answer.rrset.name[0] == b'ocelot':
+                continue
+
             rr_update = dns.update.Update('ocsnet.com.', keyring=keyring, keyalgorithm=dns.tsig.HMAC_SHA256)
 
             rr_update.replace(fqdn, 86400, 'A', new_address)
