@@ -208,7 +208,7 @@ class DbData(object):
 
     def insert_new(self, router_id, new_address):
 
-        sql = "CALL do_internal_update({}, '{}')".format(router_id, new_address)
+        sql = "CALL do_internal_update({}, '{}', '{}')".format(router_id, new_address)
         self.cursorquery.execute(sql)
         self.db.commit()
 
