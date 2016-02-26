@@ -5,9 +5,9 @@ from pydnsupdate import dbdata, homedns, dnspark, aws53
 __author__ = 'tlo'
 
 db = dbdata.DbData()
-query = db.get_current()
+rows = db.get_current()
 
-for (name, command, router_id, address, updated) in query:
+for (name, command, router_id, address, updated) in rows:
 
     router_address = subprocess.check_output(command, shell=True, universal_newlines=True).rstrip()
 
@@ -20,3 +20,4 @@ for (name, command, router_id, address, updated) in query:
         db.insert_new(router_id, router_address)
 
 db.close()
+# (name, command, router_id, address, updated)

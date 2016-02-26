@@ -120,7 +120,7 @@ class DbData(object):
 
     def get_current(self):
         self.cursorquery.execute("SELECT * FROM latest")
-        return self.cursorquery
+        return self.cursorquery.fetchall()
 
     def get_names_to_update_aws(self, name, new_address):
 
