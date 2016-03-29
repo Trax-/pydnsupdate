@@ -209,34 +209,10 @@ CREATE PROCEDURE do_internal_update(IN p_router_id INT, IN p_ip_address VARCHAR(
   END;
 
 # Initialize routers table data
-INSERT INTO routers (name, command) VALUES ('cisco', 'ssh tlo@eclipse ./checkip');
-INSERT INTO routers (name, command) VALUES ('adsl1', 'ssh tlo@apogee ./checkip');
-INSERT INTO routers (name, command) VALUES ('adsl2', 'ssh tlo@dragon ./checkip');
+
 
 # Initialize existing addresses
-INSERT INTO ip_address (router_id, ip_address, updated) VALUES (1, '198.147.254.1', '2015-01-31 11:12:26');
-INSERT INTO ip_address (router_id, ip_address, updated) VALUES (2, '198.147.254.65', '2015-01-31 11:12:26');
-INSERT INTO ip_address (router_id, ip_address, updated) VALUES (3, '198.147.254.129', '2015-01-31 11:12:26');
-INSERT INTO ip_address (router_id, ip_address, updated) VALUES (1, '96.33.83.189', '2015-01-31 13:12:03');
-INSERT INTO ip_address (router_id, ip_address, updated) VALUES (2, '74.177.75.236', '2015-01-31 13:12:19');
-INSERT INTO ip_address (router_id, ip_address, updated) VALUES (3, '74.177.75.149', '2015-01-31 13:12:29');
+
 
 # Initialize API table
-INSERT INTO service_api (service_table_name, api_key_id, api_password, base_url)
-VALUES ('AWS_Route53', 'AKIAJ7QEQBCUO4IPYDSQ', 's982onKlwbKO/nr/sakvVsYrCOi/R1+8IuEqzfsM',
-        'https://route53.amazonaws.com');
-
-INSERT INTO service_api (service_table_name, api_key_id, api_password, base_url)
-VALUES ('DNS_Park', 'AAb619912c519ef1786a6372f6e1ed77c5', '8a3786d1b9504086e8e3573642489c8caae03b3a',
-        'https://api.dnspark.com/v2/dns/');
-
-# Initialize Router names lookup table
-INSERT INTO router_names (router_id, ext_name) VALUES (1, 'ns1');
-INSERT INTO router_names (router_id, ext_name) VALUES (1, 'mx1');
-INSERT INTO router_names (router_id, ext_name) VALUES (2, 'ns2');
-INSERT INTO router_names (router_id, ext_name) VALUES (2, 'mx2');
-INSERT INTO router_names (router_id, ext_name) VALUES (3, 'ns3');
-INSERT INTO router_names (router_id, ext_name) VALUES (3, 'mx3');
-INSERT INTO router_names (router_id, ext_name) VALUES (3, 'www');
-INSERT INTO router_names (router_id, ext_name) VALUES (3, 'ocsnet.com');
 
