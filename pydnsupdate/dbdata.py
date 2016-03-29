@@ -154,7 +154,7 @@ class DbData(object):
         else:
             return self.cursorquery.fetchall()
 
-    def get_names_to_update_internal(self, name, new_address):
+    def get_names_to_update_internal(self, name):
 
         sql = ("SELECT ext_name as rname "
                "FROM router_names "
