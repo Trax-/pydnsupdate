@@ -16,7 +16,7 @@ def update(db, host_name, new_address):
 
     keyring = tsig.from_text({key: password})
 
-    names = db.get_names_to_update_internal(host_name, new_address)
+    names = db.get_names_to_update_internal(host_name)
 
     for name in names:
 
