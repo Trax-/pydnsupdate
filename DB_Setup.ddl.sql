@@ -162,6 +162,7 @@ VIEW `latest` AS
     `routers`.`name`          AS `name`,
     `routers`.`command`       AS `command`,
     `routers`.`router_id`     AS `router_id`,
+    `routers`.`OID`           AS `oid`,
     `ip_address`.`ip_address` AS `address`,
     `ip_address`.`updated`    AS `updated`
   FROM
