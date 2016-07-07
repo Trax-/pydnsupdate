@@ -15,10 +15,10 @@ for (name, command, router_id, oid, address, updated) in rows:
     print("{}'s listed IP: {} assigned IP {}".format(name, address, router_address[0]))
 
     if router_address[0] != address:
-        dnspark.update(db, name, router_address)
-        aws53.update(db, name, router_address)
-        homedns.update(db, name, router_address)
-        db.insert_new(router_id, router_address)
+        dnspark.update(db, name, router_address[0])
+        aws53.update(db, name, router_address[0])
+        homedns.update(db, name, router_address[0])
+        db.insert_new(router_id, router_address[0])
 
 db.close()
 # (name, command, router_id, address, updated)
