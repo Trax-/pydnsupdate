@@ -2,7 +2,7 @@ import mysql.connector
 from mysql.connector import connect
 from mysql.connector import errorcode
 
-from pydnsupdate import dnspark, aws53
+from . import dnspark, aws53
 
 __author__ = 'tlo'
 
@@ -36,7 +36,7 @@ class DbData(object):
 
         sql = ("INSERT INTO DNS_Park (record_id, domain_id, rname, ttl, rtype, "
                "rdata, dynamic, readonly, active, ordername, auth, last_update) "
-               "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
+               "VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')")
 
         js_data = dnspark.get_domain_data(key, password, base_url, 'ocsnet.com')
 
@@ -129,7 +129,7 @@ class DbData(object):
                "JOIN (routers, AWS_Route53 AS a, AWS_Route53_values AS v, AWS_Route53_zones AS z) "
                "ON (routers.router_id = router_names.router_id AND LEFT(a.name, 3) = ext_name "
                "AND a.record_id = v.AWS_record_id AND a.hosted_zone_id = z.record_id) "
-               "WHERE routers.name = %s AND value != %s AND LEFT(value, 5) != 'ALIAS' "
+               "WHERE routers.name = '%s' AND value != '%s' AND LEFT(value, 5) != 'ALIAS' "
                "AND type = 'A'")
 
         self.cursorquery.execute(sql, (name, new_address))
@@ -141,11 +141,9 @@ class DbData(object):
 
     def get_names_to_update_dnspark(self, name, new_address):
 
-        sql = ("SELECT ext_name as rname, rtype, ttl, dynamic, record_id "
-               "FROM router_names "
-               "JOIN (routers, DNS_Park) "
-               "ON (routers.router_id = router_names.router_id AND DNS_Park.ordername = ext_name) "
-               "WHERE name = %s AND rdata != %s")
+        sql = ("SELECT * "
+               "FROM dnspark_names "
+               "WHERE name = '%s' AND rdata != '%s'")
 
         self.cursorquery.execute(sql, (name, new_address))
 
@@ -192,7 +190,7 @@ class DbData(object):
     def insert_zone_aws(self, zones):
 
         sql = ("REPLACE INTO AWS_Route53_zones (zone_id, name, record_count, private_zone, comment) "
-               "VALUES (%s, %s, %s, %s, %s)")
+               "VALUES ('%s', '%s', '%s', '%s', '%s')")
 
         for zone in zones['HostedZones']:
             try:
@@ -214,14 +212,14 @@ class DbData(object):
 
     def save_new_dnspark(self, record_id, router_address, last_update):
 
-        sql = "UPDATE DNS_Park SET rdata = %s, last_update = %s WHERE record_id = %s"
+        sql = "UPDATE DNS_Park SET rdata = '%s', last_update = '%s' WHERE record_id = '%s'"
 
         self.cursorinput.execute(sql, (router_address, last_update, record_id))
         self.db.commit()
 
     def update_aws_values(self, value_id, router_address, last_update):
 
-        sql = "UPDATE AWS_Route53_values SET value = %s, last_update = %s WHERE value_id = %s"
+        sql = "UPDATE AWS_Route53_values SET value = '%s', last_update = '%s' WHERE value_id = '%s'"
 
         self.cursorinput.execute(sql, (router_address, last_update, value_id))
 
