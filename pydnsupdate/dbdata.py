@@ -129,10 +129,10 @@ class DbData(object):
                "JOIN (routers, AWS_Route53 AS a, AWS_Route53_values AS v, AWS_Route53_zones AS z) "
                "ON (routers.router_id = router_names.router_id AND LEFT(a.name, 3) = ext_name "
                "AND a.record_id = v.AWS_record_id AND a.hosted_zone_id = z.record_id) "
-               "WHERE routers.name = %s AND value != %s AND LEFT(value, 5) != 'ALIAS' "
-               "AND type = 'A'")
+               "WHERE routers.name = '{}' AND value != '{}' AND LEFT(value, 5) != 'ALIAS' "
+               "AND type = 'A'").format(name, new_address)
 
-        self.cursorquery.execute(sql, (name, new_address))
+        self.cursorquery.execute(sql)
 
         if self.cursorquery.rowcount == 0:
             return None
