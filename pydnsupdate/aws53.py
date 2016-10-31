@@ -34,6 +34,7 @@ def update(db, router_name, new_address):
     count = 0
 
     for name in names:
+        reply = None
         zone_id = name[4]
         changes.append({
             'Action': 'UPSERT',
@@ -56,8 +57,9 @@ def update(db, router_name, new_address):
             reply = route53.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch=batch)
 
         count += 1
-        if reply['ResponseMetadata']['HTTPStatusCode'] == 200:
+        if reply is not None and reply['ResponseMetadata']['HTTPStatusCode'] == 200:
             db.update_aws_values(name[3], new_address, reply['ChangeInfo']['SubmittedAt'])
+
     db.db.commit()
 
 

@@ -2,7 +2,7 @@ import mysql.connector
 from mysql.connector import connect
 from mysql.connector import errorcode
 
-from . import dnspark, aws53
+from pydnsupdate import dnspark, aws53
 
 __author__ = 'tlo'
 
@@ -124,13 +124,24 @@ class DbData(object):
 
     def get_names_to_update_aws(self, name, new_address):
 
-        sql = ("SELECT concat(ext_name, '.', z.name) AS host, a.type, a.ttl, v.value_id, z.zone_id "
+        sql = ("SELECT AWS_Route53.name AS host, type, ttl, "
+               "v.value_id, zone_id "
+               "FROM AWS_Route53_values v "
+               "JOIN AWS_Route53 ON record_id = AWS_record_id "
+               "JOIN AWS_Route53_zones ON hosted_zone_id = AWS_Route53_zones.record_id "
+               "WHERE type = 'A' AND LEFT(AWS_Route53.name, 3) IN (SELECT "
+               "LEFT(ext_name, 3) "
                "FROM router_names "
-               "JOIN (routers, AWS_Route53 AS a, AWS_Route53_values AS v, AWS_Route53_zones AS z) "
-               "ON (routers.router_id = router_names.router_id AND LEFT(a.name, 3) = ext_name "
-               "AND a.record_id = v.AWS_record_id AND a.hosted_zone_id = z.record_id) "
-               "WHERE routers.name = '{}' AND value != '{}' AND LEFT(value, 5) != 'ALIAS' "
-               "AND type = 'A'").format(name, new_address)
+               "JOIN routers ON routers.router_id = router_names.router_id "
+               "WHERE routers.name = '{}') AND value != '{}' "
+               "AND LEFT(value, 5) != 'ALIAS';").format(name, new_address)
+        # sql = ("SELECT concat(ext_name, '.', z.name) AS host, a.type, a.ttl, v.value_id, z.zone_id "
+        #        "FROM router_names "
+        #        "JOIN (routers, AWS_Route53 AS a, AWS_Route53_values AS v, AWS_Route53_zones AS z) "
+        #        "ON (routers.router_id = router_names.router_id AND LEFT(a.name, 3) = ext_name "
+        #        "AND a.record_id = v.AWS_record_id AND a.hosted_zone_id = z.record_id) "
+        #        "WHERE routers.name = '{}' AND value != '{}' AND LEFT(value, 5) != 'ALIAS' "
+        #        "AND type = 'A'").format(name, new_address)
 
         self.cursorquery.execute(sql)
 

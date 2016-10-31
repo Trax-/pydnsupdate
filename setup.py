@@ -12,7 +12,7 @@ setup(
     license='MIT',
     packages=find_packages(),
     install_requires=[
-        'requests', 'boto3', 'mysql-connector-python', 'dnspython3'
+        'requests', 'boto3', 'mysql-connector-python', 'dnspython'
     ],
     scripts=['bin/pydnsupdate-run'],
     zip_safe=False
