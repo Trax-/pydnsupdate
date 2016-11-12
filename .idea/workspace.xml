@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9c3400f-337d-4955-bc74-9b0e0385ba8e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8b1a2934-321f-4a5f-8731-0d872e5f6ab6.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8b1a2934-321f-4a5f-8731-0d872e5f6ab6.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pydnsupdate.iml" afterPath="$PROJECT_DIR$/.idea/pydnsupdate.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pydnsupdate/aws53.py" afterPath="$PROJECT_DIR$/pydnsupdate/aws53.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pydnsupdate/dbdata.py" afterPath="$PROJECT_DIR$/pydnsupdate/dbdata.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
     </list>
     <ignored path="pydnsupdate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,56 +60,6 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="latest" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - D_DNS@falcon" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - D_DNS@falcon" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - D_DNS@falcon" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="AWS_Route53_values" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -126,7 +71,7 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pydnsupdate/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
+            <state relative-caret-position="72">
               <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
@@ -138,45 +83,38 @@
       <file leaf-file-name="dnspark.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pydnsupdate/dnspark.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
+            <state relative-caret-position="630">
               <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbdata.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dbdata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pydnsupdate/dbdata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="240" column="0" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
+            <state relative-caret-position="4122">
+              <caret line="233" column="0" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
               <folding>
-                <marker date="1477850696886" expanded="true" signature="1028:1246" ph="INSERT INTO DNS_Park... " />
-                <marker date="1477850696886" expanded="true" signature="3435:3460" ph="SELECT missi... missing_value" />
-                <marker date="1477850696886" expanded="true" signature="3632:3671" ph="DELETE FROM " />
-                <marker date="1477850696886" expanded="true" signature="3814:3922" ph="SELECT api_k... service_api" />
-                <marker date="1477850696886" expanded="true" signature="4179:4199" ph="SELECT * FRO... latest" />
-                <marker date="1477850696886" expanded="true" signature="4321:4935" ph="SELECT AWS_R... AWS_Route53_values" />
-                <marker date="1477850696886" expanded="true" signature="4669:4868" ph="SELECT LEFT(... router_names" />
-                <marker date="1477850696886" expanded="true" signature="4983:5522" ph="SELECT conca... router_names" />
-                <marker date="1477850696886" expanded="true" signature="5799:5934" ph="SELECT rname... dnspark_names" />
-                <marker date="1477850696886" expanded="true" signature="6199:6408" ph="SELECT ext_n... router_names" />
-                <marker date="1477850696886" expanded="true" signature="6651:6673" ph="SELECT COUNT... missing_value" />
-                <marker date="1477850696886" expanded="true" signature="6852:7056" ph="SELECT COUNT... AWS_Route53" />
-                <marker date="1477850696886" expanded="true" signature="7228:7272" ph="SELECT COUNT... AWS_Route53_zones" />
-                <marker date="1477850696886" expanded="true" signature="7380:7509" ph="REPLACE INTO... AWS_Route53_zones" />
-                <marker date="1477850696886" expanded="true" signature="8189:8252" ph="UPDATE DNS_P... " />
-                <marker date="1477850696886" expanded="true" signature="8449:8527" ph="UPDATE AWS_R... " />
+                <marker date="1478703589384" expanded="true" signature="4918:4946" ph="..." />
+                <marker date="1478703589384" expanded="true" signature="5195:5330" ph="SELECT rname... dnspark_names" />
+                <marker date="1478703589384" expanded="true" signature="5595:5804" ph="SELECT ext_n... router_names" />
+                <marker date="1478703589384" expanded="true" signature="6047:6069" ph="SELECT COUNT... missing_value" />
+                <marker date="1478703589384" expanded="true" signature="6248:6452" ph="SELECT COUNT... AWS_Route53" />
+                <marker date="1478703589384" expanded="true" signature="6624:6668" ph="SELECT COUNT... AWS_Route53_zones" />
+                <marker date="1478703589384" expanded="true" signature="6776:6905" ph="REPLACE INTO... AWS_Route53_zones" />
+                <marker date="1478703589384" expanded="true" signature="7585:7648" ph="UPDATE DNS_P... " />
+                <marker date="1478703589384" expanded="true" signature="7845:7923" ph="UPDATE AWS_R... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="aws53.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="aws53.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pydnsupdate/aws53.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+            <state relative-caret-position="753">
+              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -185,7 +123,7 @@
       <file leaf-file-name="homedns.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pydnsupdate/homedns.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
+            <state relative-caret-position="288">
               <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
@@ -248,9 +186,10 @@
         <option value="$PROJECT_DIR$/pydnsupdate/dnspark.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_bundle/pydev_monkey_qt.py" />
-        <option value="$PROJECT_DIR$/pydnsupdate/aws53.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/console.sql" />
         <option value="$PROJECT_DIR$/pydnsupdate/dbdata.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/console_1.sql" />
+        <option value="$PROJECT_DIR$/pydnsupdate/aws53.py" />
       </list>
     </option>
   </component>
@@ -272,9 +211,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1919" />
-    <option name="width" value="1922" />
-    <option name="height" value="1053" />
+    <option name="x" value="1920" />
+    <option name="width" value="1680" />
+    <option name="height" value="1028" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -320,6 +259,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -369,7 +309,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -882,22 +821,19 @@
     <option name="totallyTimeSpent" value="6241000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1919" y="0" width="1922" height="1053" extended-state="0" />
+    <frame x="1920" y="0" width="1680" height="1028" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10190703" sideWeight="0.496208" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4027484" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13110846" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277311" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33577406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3253138" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.102604166" sideWeight="0.496208" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13177083" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12339743" sideWeight="0.503792" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34832636" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -908,11 +844,14 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34832636" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32878152" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33577406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3252376" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -985,22 +924,15 @@
         <state relative-caret-position="0">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <marker date="1477850696886" expanded="true" signature="1028:1246" ph="INSERT INTO DNS_Park... " />
-            <marker date="1477850696886" expanded="true" signature="3435:3460" ph="SELECT missi... missing_value" />
-            <marker date="1477850696886" expanded="true" signature="3632:3671" ph="DELETE FROM " />
-            <marker date="1477850696886" expanded="true" signature="3814:3922" ph="SELECT api_k... service_api" />
-            <marker date="1477850696886" expanded="true" signature="4179:4199" ph="SELECT * FRO... latest" />
-            <marker date="1477850696886" expanded="true" signature="4321:4935" ph="SELECT AWS_R... AWS_Route53_values" />
-            <marker date="1477850696886" expanded="true" signature="4669:4868" ph="SELECT LEFT(... router_names" />
-            <marker date="1477850696886" expanded="true" signature="4983:5522" ph="SELECT conca... router_names" />
-            <marker date="1477850696886" expanded="true" signature="5799:5934" ph="SELECT rname... dnspark_names" />
-            <marker date="1477850696886" expanded="true" signature="6199:6408" ph="SELECT ext_n... router_names" />
-            <marker date="1477850696886" expanded="true" signature="6651:6673" ph="SELECT COUNT... missing_value" />
-            <marker date="1477850696886" expanded="true" signature="6852:7056" ph="SELECT COUNT... AWS_Route53" />
-            <marker date="1477850696886" expanded="true" signature="7228:7272" ph="SELECT COUNT... AWS_Route53_zones" />
-            <marker date="1477850696886" expanded="true" signature="7380:7509" ph="REPLACE INTO... AWS_Route53_zones" />
-            <marker date="1477850696886" expanded="true" signature="8189:8252" ph="UPDATE DNS_P... " />
-            <marker date="1477850696886" expanded="true" signature="8449:8527" ph="UPDATE AWS_R... " />
+            <marker date="1478703589384" expanded="true" signature="4918:4946" ph="..." />
+            <marker date="1478703589384" expanded="true" signature="5195:5330" ph="SELECT rname... dnspark_names" />
+            <marker date="1478703589384" expanded="true" signature="5595:5804" ph="SELECT ext_n... router_names" />
+            <marker date="1478703589384" expanded="true" signature="6047:6069" ph="SELECT COUNT... missing_value" />
+            <marker date="1478703589384" expanded="true" signature="6248:6452" ph="SELECT COUNT... AWS_Route53" />
+            <marker date="1478703589384" expanded="true" signature="6624:6668" ph="SELECT COUNT... AWS_Route53_zones" />
+            <marker date="1478703589384" expanded="true" signature="6776:6905" ph="REPLACE INTO... AWS_Route53_zones" />
+            <marker date="1478703589384" expanded="true" signature="7585:7648" ph="UPDATE DNS_P... " />
+            <marker date="1478703589384" expanded="true" signature="7845:7923" ph="UPDATE AWS_R... " />
           </folding>
         </state>
       </provider>
@@ -1030,40 +962,39 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.service_api">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py" />
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.router_names">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/console_1.sql" />
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1108,74 +1039,74 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.routers">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1187,38 +1118,38 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.DNS_Park">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.AWS_Route53_zones">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1230,14 +1161,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbview:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.dnspark_names">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1265,7 +1196,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pydnsupdate/dnspark.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="630">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
@@ -1273,7 +1204,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pydnsupdate/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
+        <state relative-caret-position="72">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
@@ -1281,17 +1212,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pydnsupdate/aws53.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pydnsupdate/homedns.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="288">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
@@ -1300,139 +1223,126 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbview:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.latest">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.AWS_Route53">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/console.sql" />
+    <entry file="file://$PROJECT_DIR$/pydnsupdate/dbdata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4122">
+          <caret line="233" column="0" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+          <folding>
+            <marker date="1478703589384" expanded="true" signature="4918:4946" ph="..." />
+            <marker date="1478703589384" expanded="true" signature="5195:5330" ph="SELECT rname... dnspark_names" />
+            <marker date="1478703589384" expanded="true" signature="5595:5804" ph="SELECT ext_n... router_names" />
+            <marker date="1478703589384" expanded="true" signature="6047:6069" ph="SELECT COUNT... missing_value" />
+            <marker date="1478703589384" expanded="true" signature="6248:6452" ph="SELECT COUNT... AWS_Route53" />
+            <marker date="1478703589384" expanded="true" signature="6624:6668" ph="SELECT COUNT... AWS_Route53_zones" />
+            <marker date="1478703589384" expanded="true" signature="6776:6905" ph="REPLACE INTO... AWS_Route53_zones" />
+            <marker date="1478703589384" expanded="true" signature="7585:7648" ph="UPDATE DNS_P... " />
+            <marker date="1478703589384" expanded="true" signature="7845:7923" ph="UPDATE AWS_R... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.AWS_Route53_values">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="45" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pydnsupdate/dbdata.py">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/console_1.sql" />
+    <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.AWS_Route53">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pydnsupdate/aws53.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="240" column="0" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
-          <folding>
-            <marker date="1477850696886" expanded="true" signature="1028:1246" ph="INSERT INTO DNS_Park... " />
-            <marker date="1477850696886" expanded="true" signature="3435:3460" ph="SELECT missi... missing_value" />
-            <marker date="1477850696886" expanded="true" signature="3632:3671" ph="DELETE FROM " />
-            <marker date="1477850696886" expanded="true" signature="3814:3922" ph="SELECT api_k... service_api" />
-            <marker date="1477850696886" expanded="true" signature="4179:4199" ph="SELECT * FRO... latest" />
-            <marker date="1477850696886" expanded="true" signature="4321:4935" ph="SELECT AWS_R... AWS_Route53_values" />
-            <marker date="1477850696886" expanded="true" signature="4669:4868" ph="SELECT LEFT(... router_names" />
-            <marker date="1477850696886" expanded="true" signature="4983:5522" ph="SELECT conca... router_names" />
-            <marker date="1477850696886" expanded="true" signature="5799:5934" ph="SELECT rname... dnspark_names" />
-            <marker date="1477850696886" expanded="true" signature="6199:6408" ph="SELECT ext_n... router_names" />
-            <marker date="1477850696886" expanded="true" signature="6651:6673" ph="SELECT COUNT... missing_value" />
-            <marker date="1477850696886" expanded="true" signature="6852:7056" ph="SELECT COUNT... AWS_Route53" />
-            <marker date="1477850696886" expanded="true" signature="7228:7272" ph="SELECT COUNT... AWS_Route53_zones" />
-            <marker date="1477850696886" expanded="true" signature="7380:7509" ph="REPLACE INTO... AWS_Route53_zones" />
-            <marker date="1477850696886" expanded="true" signature="8189:8252" ph="UPDATE DNS_P... " />
-            <marker date="1477850696886" expanded="true" signature="8449:8527" ph="UPDATE AWS_R... " />
-          </folding>
+        <state relative-caret-position="753">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

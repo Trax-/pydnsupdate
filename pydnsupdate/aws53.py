@@ -34,7 +34,6 @@ def update(db, router_name, new_address):
     count = 0
 
     for name in names:
-        reply = None
         zone_id = name[4]
         changes.append({
             'Action': 'UPSERT',
@@ -51,15 +50,16 @@ def update(db, router_name, new_address):
                 batch = {'Comment': 'Change by pyDNSUpdate issued by OCSNET', 'Changes': changes}
 
                 reply = route53.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch=batch)
+                if reply['ResponseMetadata']['HTTPStatusCode'] == 200:
+                    db.update_aws_values(name[3], new_address, reply['ChangeInfo']['SubmittedAt'])
                 changes = []
         except IndexError:
             batch = {'Comment': 'Change by pyDNSUpdate issued by OCSNET', 'Changes': changes}
             reply = route53.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch=batch)
+            if reply['ResponseMetadata']['HTTPStatusCode'] == 200:
+                db.update_aws_values(name[3], new_address, reply['ChangeInfo']['SubmittedAt'])
 
         count += 1
-        if reply is not None and reply['ResponseMetadata']['HTTPStatusCode'] == 200:
-            db.update_aws_values(name[3], new_address, reply['ChangeInfo']['SubmittedAt'])
-
     db.db.commit()
 
 
