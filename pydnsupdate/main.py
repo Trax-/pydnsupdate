@@ -7,11 +7,16 @@ __author__ = 'tlo'
 db = dbdata.DbData()
 rows = db.get_current()
 
-for (name, command, router_id, oid, address, updated) in rows:
+for (name, command, command2, router_id, oid, address, updated) in rows:
 
     command += " {} {}".format(name, oid)
-    router_address = list(subprocess.check_output(command, shell=True, universal_newlines=True).rstrip().split())
 
+    try:
+        router_address = list(subprocess.check_output(command, shell=True, universal_newlines=True).rstrip().split())
+    except subprocess.CalledProcessError as err:
+        if err.returncode != 0:
+            router_address = list(
+                subprocess.check_output(command2, shell=True, universal_newlines=True).rstrip().split())
     print("{}'s listed IP: {} assigned IP {}".format(name, address, router_address[0]))
 
     if router_address[0] != address:

@@ -11,7 +11,7 @@ class DbData(object):
     def __init__(self):
 
         try:
-            self.db = connect(option_files='/home/tlo/.my.cnf')
+            self.db = connect(option_files='/home/trevor/.my.cnf')
 
         except mysql.connector.Error as err:
             if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
