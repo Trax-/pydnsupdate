@@ -11,7 +11,7 @@ class DbData(object):
     def __init__(self):
 
         try:
-            self.db = connect(option_files='/home/trevor/.my.cnf')
+            self.db = connect(option_files='/home/tlo/.my.cnf')
 
         except mysql.connector.Error as err:
             if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
@@ -97,13 +97,13 @@ class DbData(object):
 
     def check_table_empty(self, table, field):
 
-        sql = "SELECT {} FROM {} LIMIT 1".format(field, table)
+        sql = f"SELECT {field} FROM {table} LIMIT 1"
         self.cursorquery.execute(sql)
         return self.cursorquery.rowcount != 1
 
     def delete_record_dnspark(self, record_id):
 
-        sql = "DELETE FROM DNS_Park WHERE record_id = " + str(record_id)
+        sql = f"DELETE FROM DNS_Park WHERE record_id = {str(record_id)}"
         self.cursordelete.execute(sql)
         self.db.commit()
 
@@ -172,7 +172,7 @@ class DbData(object):
             return self.cursorquery.fetchall()
 
     def get_row_count(self, table, field):
-        sql = "SELECT COUNT({}) FROM {}".format(field, table)
+        sql = f"SELECT COUNT({field}) FROM {table}"
         self.cursorquery.execute(sql)
         return self.cursorquery.fetchall()[0][0]
 
@@ -210,7 +210,7 @@ class DbData(object):
 
     def insert_new(self, router_id, new_address):
 
-        sql = "CALL do_internal_update({}, '{}')".format(router_id, new_address)
+        sql = f"CALL do_internal_update({router_id}, '{new_address}')"
         self.cursorquery.execute(sql)
         self.db.commit()
 
