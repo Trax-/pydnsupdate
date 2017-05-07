@@ -9,3 +9,6 @@
 
 # Pycharm project file
 .idea/
+
+# Remove bin directory from tracked repo
+bin/
