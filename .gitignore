@@ -8,3 +8,9 @@
 
 # Python egg metadata, regenerated from source files by setuptools
 /*.egg-info
+
+# Pycharm project file
+.idea/
+
+# Remove bin directory from tracked repo
+bin/
