@@ -1,18 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/pydnsupdate/dbdata.py" line="140" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9c3400f-337d-4955-bc74-9b0e0385ba8e" name="Default" comment="">
+    <list default="true" id="e9c3400f-337d-4955-bc74-9b0e0385ba8e" name="Default" comment="Update code to use f type formatting strings">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/_metadata_/metadata" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/_metadata_/metadata.keystream" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/_metadata_/metadata.keystream.len" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/_metadata_/metadata.len" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/_metadata_/metadata_i" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/_metadata_/metadata_i.len" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/_src_/schema/D_DNS.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/.sconsign.dblite" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledCellType.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledCodeHelpers.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledCoroutineType.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledFrameType.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledFunctionType.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledGeneratorType.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledMethodType.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/InspectPatcher.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/MainProgram.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/MetaPathBasedLoader.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/__constants.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/__frozen.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/__helpers.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/fibers_x64.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/module.__main__.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/swapfiber.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate.exe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/.sconsign.dblite" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledCellType.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledCodeHelpers.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledCoroutineType.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledFrameType.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledFunctionType.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledGeneratorType.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledMethodType.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/InspectPatcher.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/MainProgram.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/MetaPathBasedLoader.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/__constants.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/__frozen.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/__helpers.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/fibers_x64.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/module.__main__.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/swapfiber.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.exe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/_staging_/schema/D_DNS/routine/get_aws_names_to_update.(varchar(20),varchar(50)).sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/storage.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/D_DNS_AWS_Route53.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/D_DNS_AWS_Route53_zones.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/D_DNS_router_names.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OLD_D_DNS_AWS_Route53_values.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledCellType.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledCodeHelpers.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledCoroutineType.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledFrameType.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledFunctionType.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledGeneratorType.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/CompiledMethodType.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/InspectPatcher.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/MainProgram.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/MetaPathBasedLoader.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/__constants.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/__constants.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/__frozen.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/__helpers.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/__helpers.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/build_definitions.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/fibers_x64.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/module.__main__.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.build/swapfiber.S" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledCellType.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledCodeHelpers.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledCoroutineType.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledFrameType.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledFunctionType.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledGeneratorType.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/CompiledMethodType.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/InspectPatcher.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/MainProgram.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/MetaPathBasedLoader.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/__constants.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/__constants.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/__frozen.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/__helpers.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/__helpers.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/build_definitions.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/fibers_x64.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/module.__main__.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pydnsupdate/main.build/swapfiber.S" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/tlo.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/tlo.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pydnsupdate.iml" afterPath="$PROJECT_DIR$/.idea/pydnsupdate.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8b1a2934-321f-4a5f-8731-0d872e5f6ab6.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8b1a2934-321f-4a5f-8731-0d872e5f6ab6.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB_Setup.ddl.sql" afterPath="$PROJECT_DIR$/DB_Setup.ddl.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pydnsupdate/dbdata.py" afterPath="$PROJECT_DIR$/pydnsupdate/dbdata.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pydnsupdate/main.py" afterPath="$PROJECT_DIR$/pydnsupdate/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
     </list>
     <ignored path="pydnsupdate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +114,7 @@
     <SUITE FILE_PATH="coverage/pydnsupdate$dbdata.coverage" NAME="dbdata Coverage Results" MODIFIED="1493740067951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydnsupdate" />
     <SUITE FILE_PATH="coverage/pydnsupdate$test.coverage" NAME="test Coverage Results" MODIFIED="1452281648755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pydnsupdate$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1464541683471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydnsupdate" />
-    <SUITE FILE_PATH="coverage/pydnsupdate$main.coverage" NAME="main Coverage Results" MODIFIED="1493740382329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydnsupdate" />
+    <SUITE FILE_PATH="coverage/pydnsupdate$main.coverage" NAME="main Coverage Results" MODIFIED="1499870684854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pydnsupdate" />
     <SUITE FILE_PATH="coverage/pydnsupdate$dnspark.coverage" NAME="dnspark Coverage Results" MODIFIED="1452183867944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -55,6 +138,56 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - D_DNS@falcon" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="D_DNS" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - D_DNS@falcon" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="D_DNS" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - D_DNS@falcon" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="D_DNS" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -62,12 +195,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/setup.py">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pydnsupdate/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+            <state relative-caret-position="306">
+              <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homedns.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pydnsupdate/homedns.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aws53.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pydnsupdate/aws53.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbdata.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pydnsupdate/dbdata.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2225">
+              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+                <marker date="1499874636934" expanded="true" signature="1018:1236" ph="INSERT INTO DNS_Park... " />
+                <marker date="1499874636934" expanded="true" signature="3786:3894" ph="SELECT api_k... service_api" />
+                <marker date="1499874636934" expanded="true" signature="4151:4171" ph="SELECT * FRO... latest" />
+                <marker date="1499874636934" expanded="true" signature="4626:4761" ph="SELECT rname... dnspark_names" />
+                <marker date="1499874636934" expanded="true" signature="5060:5068" ph="SELECT ext_n... router_names" />
+                <marker date="1499874636934" expanded="true" signature="5489:5693" ph="SELECT COUNT... AWS_Route53" />
+                <marker date="1499874636934" expanded="true" signature="5865:5909" ph="SELECT COUNT... AWS_Route53_zones" />
+                <marker date="1499874636934" expanded="true" signature="6017:6146" ph="REPLACE INTO... AWS_Route53_zones" />
+                <marker date="1499874636934" expanded="true" signature="6816:6879" ph="UPDATE DNS_P... " />
+                <marker date="1499874636934" expanded="true" signature="7077:7202" ph="UPDATE AWS_R... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,6 +257,11 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>do_</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -121,17 +303,19 @@
         <option value="$PROJECT_DIR$/pydnsupdate/__init__.py" />
         <option value="$PROJECT_DIR$/bin/pydnsupdate-run" />
         <option value="$PROJECT_DIR$/pydnsupdate/homedns.py" />
-        <option value="$PROJECT_DIR$/DB_Setup.ddl.sql" />
         <option value="$PROJECT_DIR$/pydnsupdate/dnspark.py" />
         <option value="$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_bundle/pydev_monkey_qt.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/console_1.sql" />
-        <option value="$PROJECT_DIR$/pydnsupdate/aws53.py" />
-        <option value="$PROJECT_DIR$/pydnsupdate/dbdata.py" />
         <option value="$PROJECT_DIR$/pydnsupdate/pydnsupdate/__init__.py" />
         <option value="$PROJECT_DIR$/pydnsupdate/pydnsupdate.py" />
-        <option value="$PROJECT_DIR$/pydnsupdate/main.py" />
         <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/DB_Setup.ddl.sql" />
+        <option value="$PROJECT_DIR$/pydnsupdate/aws53.py" />
+        <option value="/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/schema/D_DNS/routine/get_aws_names_to_update.(varchar(20),varchar(50)).sql" />
+        <option value="$PROJECT_DIR$/pydnsupdate/main.py" />
+        <option value="$PROJECT_DIR$/pydnsupdate/dbdata.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -192,6 +376,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -207,7 +392,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -215,7 +399,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="/usr/bin/python3.6" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="235" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="245" />
@@ -246,6 +430,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$3/SQL Dialects" value="MySQL" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
   </component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySupportQtDebugging" value="false" />
@@ -732,7 +917,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478971075742</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Update code to use f type formatting strings">
+      <created>1493742357831</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1493742357831</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -743,16 +935,17 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40209424" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33507854" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277311" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33507854" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.089435145" sideWeight="0.496208" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32460734" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.089435145" sideWeight="0.496208" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.114016734" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34764397" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12339743" sideWeight="0.503792" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34764397" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -769,7 +962,6 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32878152" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3252376" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -808,25 +1000,14 @@
     <MESSAGE value="Fixed get_names_to_update_aws added single quotes around variable substitution" />
     <MESSAGE value="Fixed query to select update names for aws" />
     <MESSAGE value="Updating source code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating source code" />
+    <MESSAGE value="Update code to use f type formatting strings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update code to use f type formatting strings" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pydnsupdate/aws53.py</url>
-          <line>35</line>
-          <option name="timeStamp" value="176" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pydnsupdate/main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="180" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -834,7 +1015,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="181" />
+      <option name="time" value="192" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -843,23 +1024,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pydnsupdate/homedns.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pydnsupdate/aws53.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.5/site-packages/mysql/connector/optionfiles.py" />
-    <entry file="file:///usr/lib/python3.5/site-packages/mysql/connector/__init__.py" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/09a89bd1-4eb2-4316-8ce6-b94014a539a7/console.sql" />
     <entry file="dbDummy://dbroutine:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.do_aws_insert">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -868,39 +1032,39 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.service_api">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py" />
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.router_names">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -927,7 +1091,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/D_DNS_service_api.sql" />
     <entry file="file://$PROJECT_DIR$/D_DNS_routers.sql" />
-    <entry file="file://$PROJECT_DIR$/D_DNS_router_names.sql" />
     <entry file="file://$PROJECT_DIR$/D_DNS_ip_address.sql" />
     <entry file="file:///usr/lib/python3.5/site-packages/mysql/connector/cursor.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
@@ -945,117 +1108,98 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.routers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB_Setup.ddl.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="162" column="28" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="171" selection-end-column="33" />
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.DNS_Park">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.AWS_Route53_zones">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1067,14 +1211,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbview:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.dnspark_names">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1093,114 +1237,83 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbview:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.latest">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.ip_address">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/console.sql" />
-    <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.AWS_Route53_values">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/console_1.sql" />
-    <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.AWS_Route53">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pydnsupdate.egg-info/requires.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pydnsupdate/homedns.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1211,51 +1324,152 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pydnsupdate/dbdata.py">
+    <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1493737714763" expanded="true" signature="1018:1236" ph="INSERT INTO DNS_Park... " />
-            <marker date="1493737714763" expanded="true" signature="3786:3894" ph="SELECT api_k... service_api" />
-            <marker date="1493737714763" expanded="true" signature="4151:4171" ph="SELECT * FRO... latest" />
-            <marker date="1493737714763" expanded="true" signature="4293:4907" ph="SELECT AWS_R... AWS_Route53_values" />
-            <marker date="1493737714763" expanded="true" signature="4641:4840" ph="SELECT LEFT(... router_names" />
-            <marker date="1493737714763" expanded="true" signature="5185:5320" ph="SELECT rname... dnspark_names" />
-            <marker date="1493737714763" expanded="true" signature="5585:5794" ph="SELECT ext_n... router_names" />
-            <marker date="1493737714763" expanded="true" signature="6228:6432" ph="SELECT COUNT... AWS_Route53" />
-            <marker date="1493737714763" expanded="true" signature="6604:6648" ph="SELECT COUNT... AWS_Route53_zones" />
-            <marker date="1493737714763" expanded="true" signature="6756:6885" ph="REPLACE INTO... AWS_Route53_zones" />
-            <marker date="1493737714763" expanded="true" signature="7555:7618" ph="UPDATE DNS_P... " />
-            <marker date="1493737714763" expanded="true" signature="7815:7893" ph="UPDATE AWS_R... " />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/D_DNS_router_names.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.AWS_Route53">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.AWS_Route53_zones">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/D_DNS.AWS_Route53_values">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/D_DNS_AWS_Route53.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbSrc:///a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/schema/D_DNS/routine/do_aws_insert.(varchar(26),varchar(60),int(11),enum('SOA', 'A', 'TXT', 'NS', 'CNAME', 'MX', 'PTR', 'SRV', 'SPF', 'AAAA'),varchar(256)).sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB_Setup.ddl.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="201" column="6" lean-forward="true" selection-start-line="201" selection-start-column="6" selection-end-line="201" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbSrc:///a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/schema/D_DNS/routine/get_aws_names_to_update.(varchar(20),varchar(50)).sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pydnsupdate/aws53.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pydnsupdate/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="306">
+          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pydnsupdate/aws53.py">
+    <entry file="file://$PROJECT_DIR$/pydnsupdate/homedns.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
+    <entry file="dbSrc:///a03dd009/8b1a2934-321f-4a5f-8731-0d872e5f6ab6/schema/D_DNS/routine/get_internal_names_to_update.(varchar(50)).sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pydnsupdate/dbdata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2225">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <marker date="1499874636934" expanded="true" signature="1018:1236" ph="INSERT INTO DNS_Park... " />
+            <marker date="1499874636934" expanded="true" signature="3786:3894" ph="SELECT api_k... service_api" />
+            <marker date="1499874636934" expanded="true" signature="4151:4171" ph="SELECT * FRO... latest" />
+            <marker date="1499874636934" expanded="true" signature="4626:4761" ph="SELECT rname... dnspark_names" />
+            <marker date="1499874636934" expanded="true" signature="5060:5068" ph="SELECT ext_n... router_names" />
+            <marker date="1499874636934" expanded="true" signature="5489:5693" ph="SELECT COUNT... AWS_Route53" />
+            <marker date="1499874636934" expanded="true" signature="5865:5909" ph="SELECT COUNT... AWS_Route53_zones" />
+            <marker date="1499874636934" expanded="true" signature="6017:6146" ph="REPLACE INTO... AWS_Route53_zones" />
+            <marker date="1499874636934" expanded="true" signature="6816:6879" ph="UPDATE DNS_P... " />
+            <marker date="1499874636934" expanded="true" signature="7077:7202" ph="UPDATE AWS_R... " />
+          </folding>
         </state>
       </provider>
     </entry>

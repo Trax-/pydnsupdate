@@ -124,24 +124,12 @@ class DbData(object):
 
     def get_names_to_update_aws(self, name, new_address):
 
-        sql = ("SELECT AWS_Route53.name AS host, type, ttl, "
-               "v.value_id, zone_id "
-               "FROM AWS_Route53_values v "
-               "JOIN AWS_Route53 ON record_id = AWS_record_id "
-               "JOIN AWS_Route53_zones ON hosted_zone_id = AWS_Route53_zones.record_id "
-               "WHERE type = 'A' AND LEFT(AWS_Route53.name, 3) IN (SELECT "
-               "LEFT(ext_name, 3) "
-               "FROM router_names "
-               "JOIN routers ON routers.router_id = router_names.router_id "
-               "WHERE routers.name = '{}') AND value != '{}' "
-               "AND LEFT(value, 5) != 'ALIAS';").format(name, new_address)
-
-        self.cursorquery.execute(sql)
-
-        if self.cursorquery.rowcount == 0:
-            return None
-        else:
-            return self.cursorquery.fetchall()
+        sql = f"CALL get_aws_names_to_update('{name}', '{new_address}');"
+        for result in self.cursorquery.execute(sql, multi=True):
+            if result.with_rows:
+                return self.cursorquery.fetchall()
+            else:
+                return None
 
     def get_names_to_update_dnspark(self, name, new_address):
 
@@ -158,11 +146,7 @@ class DbData(object):
 
     def get_names_to_update_internal(self, name):
 
-        sql = ("SELECT ext_name as rname "
-               "FROM router_names "
-               "JOIN routers "
-               "ON routers.router_id = router_names.router_id "
-               "WHERE name = '{}' AND name != 'www'").format(name)
+        sql = f"CALL get_internal_names_to_update('{name}')"
 
         self.cursorquery.execute(sql)
 
@@ -223,9 +207,10 @@ class DbData(object):
 
     def update_aws_values(self, value_id, router_address, last_update):
 
-        sql = "UPDATE AWS_Route53_values SET value = %s, last_update = %s WHERE value_id = %s"
+        sql = f"UPDATE AWS_Route53_values SET value = '{router_address}', last_update = '{last_update}' WHERE " \
+              f"value_id = '{value_id}' "
 
-        self.cursorinput.execute(sql, (router_address, last_update, value_id))
+        self.cursorinput.execute(sql)
 
     def close(self):
         self.cursorquery.close()

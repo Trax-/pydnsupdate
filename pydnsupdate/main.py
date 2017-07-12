@@ -1,6 +1,6 @@
 import subprocess
 
-from pydnsupdate import aws53, dbdata, dnspark, homedns
+from pydnsupdate import aws53, dbdata, homedns
 
 __author__ = 'tlo'
 
@@ -24,7 +24,7 @@ def main():
         print(f"{name}'s listed IP: {address} assigned IP {router_address[0]}")
 
         if router_address[0] != address:
-            dnspark.update(db, name, router_address[0])
+            # dnspark.update(db, name, router_address[0])
             aws53.update(db, name, router_address[0])
             homedns.update(db, name, router_address[0])
             db.insert_new(router_id, router_address[0])

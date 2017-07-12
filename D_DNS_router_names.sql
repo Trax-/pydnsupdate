@@ -1,0 +1,10 @@
+INSERT INTO D_DNS.router_names (router_id, ext_name) VALUES (1, 'ns1');
+INSERT INTO D_DNS.router_names (router_id, ext_name) VALUES (1, 'mx1');
+INSERT INTO D_DNS.router_names (router_id, ext_name) VALUES (2, 'ns2');
+INSERT INTO D_DNS.router_names (router_id, ext_name) VALUES (2, 'mx2');
+INSERT INTO D_DNS.router_names (router_id, ext_name) VALUES (3, 'ns3');
+INSERT INTO D_DNS.router_names (router_id, ext_name) VALUES (3, 'mx3');
+INSERT INTO D_DNS.router_names (router_id, ext_name) VALUES (3, 'www');
+INSERT INTO D_DNS.router_names (router_id, ext_name) VALUES (3, 'ocsnet.com');
+INSERT INTO D_DNS.router_names (router_id, ext_name) VALUES (3, 'ocsnet.org');
+INSERT INTO D_DNS.router_names (router_id, ext_name) VALUES (3, 'ocsnet.info');

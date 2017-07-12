@@ -4,30 +4,34 @@ DROP TABLE IF EXISTS AWS_Route53_zones;
 
 CREATE TABLE AWS_Route53_zones
 (
-  record_id    MEDIUMINT UNSIGNED    AUTO_INCREMENT UNIQUE NOT NULL,
+  record_id    MEDIUMINT UNSIGNED     AUTO_INCREMENT UNIQUE NOT NULL,
   zone_id      VARCHAR(26),
-  name         VARCHAR(12)                                 NOT NULL,
-  record_count TINYINT(4)                                  NOT NULL,
-  private_zone ENUM('TRUE', 'FALSE') DEFAULT 'False',
+  name         VARCHAR(12)                                  NOT NULL,
+  record_count TINYINT(4)                                   NOT NULL,
+  private_zone ENUM ('TRUE', 'FALSE') DEFAULT 'False',
   comment      VARCHAR(50)
 );
-CREATE INDEX record_id_idx ON AWS_Route53_zones (record_id);
-CREATE INDEX zone_id ON AWS_Route53_zones (zone_id);
+CREATE INDEX record_id_idx
+  ON AWS_Route53_zones (record_id);
+CREATE INDEX zone_id
+  ON AWS_Route53_zones (zone_id);
 
 CREATE TABLE AWS_Route53
 (
   record_id      MEDIUMINT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY                                         NOT NULL
   COMMENT 'hostname record id',
   name           VARCHAR(60)                                                                              NOT NULL,
-  type           ENUM('SOA', 'A', 'TXT', 'NS', 'CNAME', 'MX', 'PTR', 'SRV', 'SPF', 'AAAA')                NOT NULL
+  type           ENUM ('SOA', 'A', 'TXT', 'NS', 'CNAME', 'MX', 'PTR', 'SRV', 'SPF', 'AAAA')               NOT NULL
   COMMENT 'RR type',
   ttl            INT(11),
   hosted_zone_id MEDIUMINT(8) UNSIGNED                                                                    NOT NULL
   COMMENT 'Hosted zone id each domain',
   CONSTRAINT AWS_Route53_ibfk_1 FOREIGN KEY (hosted_zone_id) REFERENCES AWS_Route53_zones (record_id)
 );
-CREATE INDEX hosted_zone_id ON AWS_Route53 (hosted_zone_id);
-CREATE INDEX record_id ON AWS_Route53 (record_id);
+CREATE INDEX hosted_zone_id
+  ON AWS_Route53 (hosted_zone_id);
+CREATE INDEX record_id
+  ON AWS_Route53 (record_id);
 
 CREATE TABLE AWS_Route53_values
 (
@@ -37,35 +41,37 @@ CREATE TABLE AWS_Route53_values
   last_update   DATETIME,
   CONSTRAINT AWS_Route53_values_ibfk_1 FOREIGN KEY (AWS_record_id) REFERENCES AWS_Route53 (record_id)
 );
-CREATE INDEX AWS_record_id ON AWS_Route53_values (AWS_record_id);
+CREATE INDEX AWS_record_id
+  ON AWS_Route53_values (AWS_record_id);
 
 CREATE TABLE DNS_Park
 (
-  record_id   MEDIUMINT(8) UNSIGNED PRIMARY KEY NOT NULL
+  record_id   MEDIUMINT(8) UNSIGNED PRIMARY KEY  NOT NULL
   COMMENT 'DNS Park host id',
-  domain_id   INT(11)                           NOT NULL
+  domain_id   INT(11)                            NOT NULL
   COMMENT 'DNS PArk domain id',
-  rname       VARCHAR(54)                       NOT NULL
+  rname       VARCHAR(54)                        NOT NULL
   COMMENT 'host name to update',
-  ttl         INT(11)                           NOT NULL
+  ttl         INT(11)                            NOT NULL
   COMMENT 'Time to live value for host',
-  rtype       VARCHAR(10)                       NOT NULL
+  rtype       VARCHAR(10)                        NOT NULL
   COMMENT 'DNS Recod type indicator',
-  rdata       VARCHAR(256)                      NOT NULL
+  rdata       VARCHAR(256)                       NOT NULL
   COMMENT 'Mostly the ip address but depends on the rtype above',
-  dynamic     ENUM('N', 'Y') DEFAULT 'N'        NOT NULL
+  dynamic     ENUM ('N', 'Y') DEFAULT 'N'        NOT NULL
   COMMENT 'Dynamically updated hosts',
-  readonly    ENUM('N', 'Y')                    NOT NULL
+  readonly    ENUM ('N', 'Y')                    NOT NULL
   COMMENT 'Y or N to indicate writeable',
-  active      ENUM('N', 'Y')                    NOT NULL
+  active      ENUM ('N', 'Y')                    NOT NULL
   COMMENT 'Most likely all records are active but ...',
   ordername   VARCHAR(43) COMMENT 'Not sure what this field is about',
-  auth        ENUM('1')                         NOT NULL
+  auth        ENUM ('1')                         NOT NULL
   COMMENT 'No clue but seems to be always 1',
-  last_update DATETIME                          NOT NULL
+  last_update DATETIME                           NOT NULL
   COMMENT 'Date of the last update'
 );
-CREATE INDEX routers_ordername_idx ON DNS_Park (ordername);
+CREATE INDEX routers_ordername_idx
+  ON DNS_Park (ordername);
 
 CREATE TABLE ip_address
 (
@@ -77,12 +83,15 @@ CREATE TABLE ip_address
   COMMENT 'Device address',
   updated    DATETIME            NOT NULL
   COMMENT 'Date/Time of last update',
-  active     ENUM('Y', 'N'),
+  active     ENUM ('Y', 'N'),
   CONSTRAINT ip_address_router_id FOREIGN KEY (router_id) REFERENCES routers (router_id)
 );
-CREATE UNIQUE INDEX address_id ON ip_address (address_id);
-CREATE UNIQUE INDEX ip_address ON ip_address (ip_address);
-CREATE INDEX ip_address_router_id_idx ON ip_address (router_id);
+CREATE UNIQUE INDEX address_id
+  ON ip_address (address_id);
+CREATE UNIQUE INDEX ip_address
+  ON ip_address (ip_address);
+CREATE INDEX ip_address_router_id_idx
+  ON ip_address (router_id);
 
 CREATE TABLE router_names
 (
@@ -93,7 +102,8 @@ CREATE TABLE router_names
   ext_name  VARCHAR(20)                       NOT NULL
   COMMENT 'Names to be updated'
 );
-CREATE UNIQUE INDEX name_id ON router_names (name_id);
+CREATE UNIQUE INDEX name_id
+  ON router_names (name_id);
 
 CREATE TABLE routers
 (
@@ -104,7 +114,8 @@ CREATE TABLE routers
   command   VARCHAR(30)         NOT NULL
   COMMENT 'Command string to obtain address'
 );
-CREATE UNIQUE INDEX router_id ON routers (router_id);
+CREATE UNIQUE INDEX router_id
+  ON routers (router_id);
 
 CREATE TABLE service_api
 (
@@ -120,7 +131,7 @@ CREATE TABLE service_api
 
 DROP PROCEDURE IF EXISTS D_DNS.do_aws_insert;
 CREATE DEFINER =`tlo`@`%` PROCEDURE `do_aws_insert`(IN p_zone_id VARCHAR(26), IN p_name VARCHAR(60), IN p_ttl INT,
-                                                    IN p_type    ENUM('SOA', 'A', 'TXT', 'NS', 'CNAME', 'MX', 'PTR', 'SRV', 'SPF', 'AAAA'),
+                                                    IN p_type    ENUM ('SOA', 'A', 'TXT', 'NS', 'CNAME', 'MX', 'PTR', 'SRV', 'SPF', 'AAAA'),
                                                     IN p_value   VARCHAR(256))
   BEGIN
     SET @zone_id = (SELECT record_id
@@ -170,3 +181,22 @@ VIEW `latest` AS
       JOIN `ip_address` ON ((`routers`.`router_id` = `ip_address`.`router_id`)))
   WHERE
     (`ip_address`.`active` = 'Y')
+
+DROP PROCEDURE IF EXISTS D_DNS.get_aws_names_to_update;
+CREATE DEFINER = 'tlo'@'%' PROCEDURE `get_aws_names_to_update`(IN p_name VARCHAR(20), IN p_new_address VARCHAR(50))
+  BEGIN
+    SELECT
+      AWS_Route53.name AS host,
+      type,
+      ttl,
+      v.value_id,
+      zone_id
+    FROM AWS_Route53_values v
+      JOIN AWS_Route53 ON record_id = AWS_record_id
+      JOIN AWS_Route53_zones ON hosted_zone_id = AWS_Route53_zones.record_id
+    WHERE type = 'A' AND LEFT(AWS_Route53.name, 3) IN (SELECT LEFT(ext_name, 3)
+                                                       FROM router_names
+                                                         JOIN routers ON routers.router_id = router_names.router_id
+                                                       WHERE routers.name = p_name) AND value != p_new_address
+          AND LEFT(value, 5) != 'ALIAS';
+  END;
