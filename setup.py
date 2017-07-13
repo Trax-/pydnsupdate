@@ -6,7 +6,7 @@ setup(
     name='pydnsupdate',
     version='0.5',
     description='Dynamic DNS updater program',
-    url='tlo@ocelot:/mnt/git/PyDNSUpdate.git',
+    url='tlo@ocelot:/srv/git/PyDNSUpdate.git',
     author='Trevor Obermann',
     author_email='tlo@ocsnet.com',
     license='MIT',

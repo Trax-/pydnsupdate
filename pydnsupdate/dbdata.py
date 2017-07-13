@@ -109,8 +109,8 @@ class DbData(object):
 
     def get_api_key(self, service_table):
 
-        sql = ("SELECT api_key_id, api_password, base_url "
-               "FROM service_api WHERE service_table_name = '{}'".format(service_table))
+        sql = f"SELECT api_key_id, api_password, base_url " \
+              f"FROM service_api WHERE service_table_name = '{service_table}'"
 
         self.cursorquery.execute(sql)
         if self.cursorquery.rowcount == 0:
@@ -133,9 +133,9 @@ class DbData(object):
 
     def get_names_to_update_dnspark(self, name, new_address):
 
-        sql = ("SELECT rname, rtype, ttl, dynamic, record_id "
-               "FROM dnspark_names "
-               "WHERE name = '{}' AND rdata != '{}'").format(name, new_address)
+        sql = f"SELECT rname, rtype, ttl, dynamic, record_id " \
+              f"FROM dnspark_names " \
+              f"WHERE name = '{name}' AND rdata != '{new_address}'"
 
         self.cursorquery.execute(sql)
 
@@ -162,11 +162,11 @@ class DbData(object):
 
     def get_row_count_by_zone_id(self, zone_id):
 
-        sql = ("SELECT COUNT(a.record_id) "
-               "FROM AWS_Route53 AS a "
-               "JOIN AWS_Route53_zones AS b "
-               "ON a.hosted_zone_id = b.record_id "
-               "WHERE b.zone_id = '{}'").format(zone_id)
+        sql = f"SELECT COUNT(a.record_id) " \
+              f"FROM AWS_Route53 AS a " \
+              f"JOIN AWS_Route53_zones AS b " \
+              f"ON a.hosted_zone_id = b.record_id " \
+              f"WHERE b.zone_id = '{zone_id}'"
 
         self.cursorquery.execute(sql)
         return self.cursorquery.fetchall()[0][0]
@@ -200,9 +200,9 @@ class DbData(object):
 
     def save_new_dnspark(self, record_id, router_address, last_update):
 
-        sql = "UPDATE DNS_Park SET rdata=%s, last_update=%s WHERE record_id=%s"
+        sql = f"UPDATE DNS_Park SET rdata='{router_address}', last_update='{last_update}' WHERE record_id={record_id}"
 
-        self.cursorinput.execute(sql, (router_address, last_update, record_id))
+        self.cursorinput.execute(sql)
         self.db.commit()
 
     def update_aws_values(self, value_id, router_address, last_update):
