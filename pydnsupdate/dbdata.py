@@ -2,7 +2,7 @@ import mysql.connector
 from mysql.connector import connect
 from mysql.connector import errorcode
 
-from . import dnspark, aws53
+from . import aws53
 
 __author__ = 'tlo'
 
@@ -25,34 +25,7 @@ class DbData(object):
         self.cursorinput = self.db.cursor(buffered=True)
         self.cursordelete = self.db.cursor(buffered=True)
 
-        if self.check_table_empty('DNS_Park', 'record_id'):
-            self.initialize_table_dnspark()
-
         self.initialize_tables_aws()
-
-    def initialize_table_dnspark(self):
-
-        key, password, base_url = self.get_api_key('DNS_Park')
-
-        sql = ("INSERT INTO DNS_Park (record_id, domain_id, rname, ttl, rtype, "
-               "rdata, dynamic, readonly, active, ordername, auth, last_update) "
-               "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
-
-        js_data = dnspark.get_domain_data(key, password, base_url, 'ocsnet.com')
-
-        for record in js_data:
-            try:
-                dynamic = dnspark.get_record_data(key, password, base_url, record['record_id'])['dynamic']
-            except KeyError:
-                dynamic = 'N'
-
-            data = (record['record_id'], record['domain_id'], record['rname'], record['ttl'], record['rtype'],
-                    record['rdata'], dynamic, record['readonly'], record['active'], record['ordername'],
-                    record['auth'],
-                    record['last_update'].replace('T', ' ').replace('Z', ''))
-
-            self.cursorinput.execute(sql, data)
-            self.db.commit()
 
     def initialize_tables_aws(self):
 
@@ -80,18 +53,19 @@ class DbData(object):
                     for rr in record['ResourceRecords']:
                         address = rr['Value']
 
-                        self.cursorquery.execute("CALL do_aws_insert('{}', '{}', {}, '{}', '{}')".format(
-                            zone_id, record['Name'], record['TTL'], record['Type'], address))
+                        self.cursorquery.execute(
+                            f"CALL do_aws_insert('{zone_id}', '{record['Name']}', {record['TTL']}, "
+                            f"'{record['Type']}', '{address}')")
 
                         self.db.commit()
                 except KeyError:
 
                     at = record['AliasTarget']
 
-                    address = "ALIAS {} ({})".format(at['DNSName'], at['HostedZoneId'])
+                    address = f"ALIAS '{at['DNSName']}', ({at['HostedZoneId']})"
 
-                    self.cursorquery.execute("CALL do_aws_insert('{}', '{}', {}, '{}', '{}')".format(
-                        zone_id, record['Name'], 0, record['Type'], address))
+                    self.cursorquery.execute(f"CALL do_aws_insert('{zone_id}', '{record['Name']}', "
+                                             f"{0}, '{record['Type']}', '{address}')")
 
                     self.db.commit()
 
@@ -100,12 +74,6 @@ class DbData(object):
         sql = f"SELECT {field} FROM {table} LIMIT 1"
         self.cursorquery.execute(sql)
         return self.cursorquery.rowcount != 1
-
-    def delete_record_dnspark(self, record_id):
-
-        sql = f"DELETE FROM DNS_Park WHERE record_id = {str(record_id)}"
-        self.cursordelete.execute(sql)
-        self.db.commit()
 
     def get_api_key(self, service_table):
 
@@ -131,19 +99,6 @@ class DbData(object):
             else:
                 return None
 
-    def get_names_to_update_dnspark(self, name, new_address):
-
-        sql = f"SELECT rname, rtype, ttl, dynamic, record_id " \
-              f"FROM dnspark_names " \
-              f"WHERE name = '{name}' AND rdata != '{new_address}'"
-
-        self.cursorquery.execute(sql)
-
-        if self.cursorquery.rowcount == 0:
-            return None
-        else:
-            return self.cursorquery.fetchall()
-
     def get_names_to_update_internal(self, name):
 
         sql = f"CALL get_internal_names_to_update('{name}')"
@@ -161,15 +116,15 @@ class DbData(object):
         return self.cursorquery.fetchall()[0][0]
 
     def get_row_count_by_zone_id(self, zone_id):
+        count = 0
+        sql = f"call get_row_count_by_zone_id('{zone_id}');"
 
-        sql = f"SELECT COUNT(a.record_id) " \
-              f"FROM AWS_Route53 AS a " \
-              f"JOIN AWS_Route53_zones AS b " \
-              f"ON a.hosted_zone_id = b.record_id " \
-              f"WHERE b.zone_id = '{zone_id}'"
+        self.cursorquery.execute(sql, multi=True)
+        for result in self.cursorquery.execute(sql, multi=True):
+            if result.with_rows:
+                count = self.cursorquery.fetchall()[0][0]
 
-        self.cursorquery.execute(sql)
-        return self.cursorquery.fetchall()[0][0]
+        return count
 
     def get_zone_count(self):
         self.cursorquery.execute("SELECT COUNT(zone_id) FROM AWS_Route53_zones")
@@ -177,8 +132,8 @@ class DbData(object):
 
     def insert_zone_aws(self, zones):
 
-        sql = ("REPLACE INTO AWS_Route53_zones (zone_id, name, record_count, private_zone, comment) "
-               "VALUES (%s, %s, %s, %s, %s)")
+        # sql = ("REPLACE INTO AWS_Route53_zones (zone_id, name, record_count, private_zone, comment) "
+        #        "VALUES (%s, %s, %s, %s, %s)")
 
         for zone in zones['HostedZones']:
             try:
@@ -186,23 +141,20 @@ class DbData(object):
             except KeyError:
                 comment = ''
 
-            data = (zone['Id'], zone['Name'], zone['ResourceRecordSetCount'],
-                    str(zone['Config']['PrivateZone']), comment)
+            # data = (zone['Id'], zone['Name'], zone['ResourceRecordSetCount'],
+            #         str(zone['Config']['PrivateZone']), comment)
 
-            self.cursorinput.execute(sql, data)
+            sql = f"REPLACE INTO AWS_Route53_zones (zone_id, name, record_count, private_zone, comment) " \
+                  f"VALUES ({zone['id']}, {zone['Name']}, {zone['ResourceRecordSetCount']}, " \
+                  f"'{zone['Config']['PrivateZone']}', '{comment}')"
+
+            self.cursorinput.execute(sql)
             self.db.commit()
 
     def insert_new(self, router_id, new_address):
 
         sql = f"CALL do_internal_update({router_id}, '{new_address}')"
         self.cursorquery.execute(sql)
-        self.db.commit()
-
-    def save_new_dnspark(self, record_id, router_address, last_update):
-
-        sql = f"UPDATE DNS_Park SET rdata='{router_address}', last_update='{last_update}' WHERE record_id={record_id}"
-
-        self.cursorinput.execute(sql)
         self.db.commit()
 
     def update_aws_values(self, value_id, router_address, last_update):
