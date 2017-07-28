@@ -11,7 +11,7 @@ class DbData(object):
     def __init__(self):
 
         try:
-            self.db = connect(option_files='/home/tlo/.my.cnf')
+            self.db = connect(option_files='/home/tlo/.my.cnf', force_ipv6=True)
 
         except mysql.connector.Error as err:
             if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
@@ -132,17 +132,11 @@ class DbData(object):
 
     def insert_zone_aws(self, zones):
 
-        # sql = ("REPLACE INTO AWS_Route53_zones (zone_id, name, record_count, private_zone, comment) "
-        #        "VALUES (%s, %s, %s, %s, %s)")
-
         for zone in zones['HostedZones']:
             try:
                 comment = zone['Config']['Comment']
             except KeyError:
                 comment = ''
-
-            # data = (zone['Id'], zone['Name'], zone['ResourceRecordSetCount'],
-            #         str(zone['Config']['PrivateZone']), comment)
 
             sql = f"REPLACE INTO AWS_Route53_zones (zone_id, name, record_count, private_zone, comment) " \
                   f"VALUES ({zone['id']}, {zone['Name']}, {zone['ResourceRecordSetCount']}, " \
