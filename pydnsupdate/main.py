@@ -30,5 +30,17 @@ def main():
     db.close()
 
 
+def testroute():
+    name = 'adsl2'
+    new_address = '98.1.2.4'
+
+    fred = dbdata.DbData()
+
+    names = fred.get_names_to_update_aws(name, new_address)
+
+    for name in names:
+        print(name)
+
+
 if __name__ == '__main__':
     main()
