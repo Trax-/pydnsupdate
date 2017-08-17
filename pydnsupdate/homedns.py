@@ -12,6 +12,7 @@ def lookup(hostname):
 
 
 def update(db, host_name, new_address):
+
     key, password, base_url = db.get_api_key('DNS_Eclipse')
 
     keyring = tsig.from_text({key: password})
@@ -20,7 +21,7 @@ def update(db, host_name, new_address):
 
     for name in names:
 
-        if name[0] == 'ocsnet.com' or name[0] == 'www':
+        if name[0][0:6] == 'ocsnet' or name[0] == 'www':
             continue
 
         fqdn = name[0] + '.ocsnet.com.'
