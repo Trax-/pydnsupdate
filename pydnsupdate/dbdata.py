@@ -10,7 +10,7 @@ class DbData(object):
     def __init__(self):
 
         try:
-            self.db = MySQLConnection(option_files='./.my.cnf', force_ipv6=True)
+            self.db = MySQLConnection(option_files='/home/tlo/.my.cnf', force_ipv6=True)
 
         except Error as err:
             if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
