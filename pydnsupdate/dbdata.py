@@ -147,7 +147,8 @@ class DbData(object):
 
     def update_aws_values(self, value_id, router_address, last_update):
 
-        sql = f"UPDATE AWS_Route53_values SET value = '{router_address}', last_update = '{last_update}' WHERE " \
+        sql = f"UPDATE AWS_Route53_values SET value = '{router_address}'," \
+              f" last_update = '{last_update.strftime('%Y-%m-%d %H:%M:%S')}' WHERE " \
               f"value_id = '{value_id}' "
 
         self.cursorinput.execute(sql)
