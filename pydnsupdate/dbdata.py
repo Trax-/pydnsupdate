@@ -10,7 +10,7 @@ class DbData(object):
     def __init__(self):
 
         try:
-            self.db = MySQLConnection(option_files='/home/tlo/.my.cnf', force_ipv6=True)
+            self.db = MySQLConnection(option_files='/home/tlo/.pydnsupdate.cnf', force_ipv6=True)
 
         except Error as err:
             if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
@@ -39,34 +39,42 @@ class DbData(object):
 
         for zone in zones['HostedZones']:
 
-            zone_id = zone['Id']
+            self.cursorquery.callproc('get_db_zone_id', (zone['Id'],))
+            for result in self.cursorquery.stored_results():
+                if result.with_rows:
+                    zone_id = result.fetchone()[0]
+                else:
+                    zone_id = 0
 
-            if self.get_row_count_by_zone_id(zone_id) > zone['ResourceRecordSetCount']:
-                continue
+            db_row_count = self.get_row_count_by_zone_id(zone_id)
+            aws_row_count = zone['ResourceRecordSetCount'] + 3
 
-            r_r_set = aws53.list_resource_record_sets(route53, zone_id)
+            if aws_row_count != db_row_count:
 
-            for record in r_r_set['ResourceRecordSets']:
-
-                try:
-                    for rr in record['ResourceRecords']:
-                        address = rr['Value']
-
-                        self.cursorquery.execute(
-                            f"CALL do_aws_insert('{zone_id}', '{record['Name']}', {record['TTL']}, "
-                            f"'{record['Type']}', '{address}')")
-
-                        self.db.commit()
-                except KeyError:
-
-                    at = record['AliasTarget']
-
-                    address = f"ALIAS '{at['DNSName']}', ({at['HostedZoneId']})"
-
-                    self.cursorquery.execute(f"CALL do_aws_insert('{zone_id}', '{record['Name']}', "
-                                             f"{0}, '{record['Type']}', '{address}')")
-
+                if aws_row_count < db_row_count:
+                    self.cursordelete.execute(f'DELETE FROM AWS_Route53 WHERE hosted_zone_id = {zone_id}')
                     self.db.commit()
+
+                r_r_set = aws53.list_resource_record_sets(route53, zone['Id'])
+
+                for record in r_r_set['ResourceRecordSets']:
+
+                    try:
+                        for rr in record['ResourceRecords']:
+                            address = rr['Value']
+
+                            self.cursorquery.callproc('do_aws_insert',
+                                                      (zone_id, record['Name'], record['TTL'], record['Type'], address))
+                            self.db.commit()
+                    except KeyError:
+
+                        at = record['AliasTarget']
+
+                        address = f"ALIAS '{at['DNSName']}', ({at['HostedZoneId']})"
+
+                        self.cursorquery.callproc('do_aws_insert',
+                                                  (zone_id, record['Name'], 0, record['Type'], address))
+                        self.db.commit()
 
     def check_table_empty(self, table, field):
 
@@ -113,7 +121,6 @@ class DbData(object):
         return self.cursorquery.fetchall()[0][0]
 
     def get_row_count_by_zone_id(self, zone_id):
-
         self.cursorquery.callproc('get_row_count_by_zone_id', (zone_id,))
         for result in self.cursorquery.stored_results():
             if result.with_rows:
