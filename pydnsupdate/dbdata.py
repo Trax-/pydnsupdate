@@ -10,7 +10,7 @@ class DbData(object):
     def __init__(self):
 
         try:
-            self.db = MySQLConnection(option_files='/home/tlo/.pydnsupdate.cnf', force_ipv6=True)
+            self.db = MySQLConnection(option_files='.pydnsupdate.cnf', force_ipv6=True)
 
         except Error as err:
             if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
@@ -47,7 +47,9 @@ class DbData(object):
                     zone_id = 0
 
             db_row_count = self.get_row_count_by_zone_id(zone_id)
-            aws_row_count = zone['ResourceRecordSetCount'] + 3
+            aws_row_count = zone['ResourceRecordSetCount'] + 3  # Add 3 for NS records
+            if zone_id == 2:  # Add 1 more for MX record if ocsnet.com (zone_id=2)
+                aws_row_count += 1
 
             if aws_row_count != db_row_count:
 
