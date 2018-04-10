@@ -12,7 +12,6 @@ def lookup(hostname):
 
 
 def update(db, host_name, new_address):
-
     key, password, base_url = db.get_api_key('DNS_Eclipse')
 
     keyring = tsig.from_text({key: password})
@@ -28,12 +27,15 @@ def update(db, host_name, new_address):
 
         answer = lookup(fqdn)
 
-        if answer.rrset.items[0].address != new_address:
+        for index in range(0, len(new_address)):
 
-            rr_update = dns.update.Update('ocsnet.com.', keyring=keyring, keyalgorithm=dns.tsig.HMAC_SHA256)
+            temp = answer.rrset.items[index].address
+            if temp not in new_address:
+                rr_update = dns.update.Update('ocsnet.com.', keyring=keyring, keyalgorithm=dns.tsig.HMAC_SHA256)
 
-            rr_update.replace(fqdn, 86400, 'A', new_address)
+                rr_update.delete(fqdn, 'A', temp)
+                rr_update.add(fqdn, 86400, 'A', new_address[index])
 
-            response = dns.query.udp(rr_update, '198.147.254.14')
+                response = dns.query.udp(rr_update, '198.147.254.14')
 
-            print(response)
+                print(response)

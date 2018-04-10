@@ -101,7 +101,7 @@ class DbData(object):
 
     def get_names_to_update_aws(self, name, new_address):
 
-        self.cursorquery.callproc('get_aws_names_to_update', (name, new_address))
+        self.cursorquery.callproc('get_aws_names_to_update', (name, new_address[0], new_address[1]))
         for result in self.cursorquery.stored_results():
             if result.with_rows:
                 return result.fetchall()
@@ -144,7 +144,7 @@ class DbData(object):
                 comment = ''
 
             sql = f"REPLACE INTO AWS_Route53_zones (zone_id, name, record_count, private_zone, comment) " \
-                  f"VALUES ({zone['id']}, {zone['Name']}, {zone['ResourceRecordSetCount']}, " \
+                  f"VALUES ('{zone['Id']}', '{zone['Name']}', {zone['ResourceRecordSetCount']}, " \
                   f"'{zone['Config']['PrivateZone']}', '{comment}')"
 
             self.cursorinput.execute(sql)
@@ -152,8 +152,10 @@ class DbData(object):
 
     def insert_new(self, router_id, new_address):
 
-        self.cursorquery.callproc('do_internal_update', (router_id, new_address))
-        self.db.commit()
+        for index in range(0, len(new_address)):
+            temp = new_address[index]
+            self.cursorquery.callproc('do_internal_update', (router_id, temp))
+            self.db.commit()
 
     def update_aws_values(self, value_id, router_address, last_update):
 

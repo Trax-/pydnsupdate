@@ -44,35 +44,6 @@ CREATE TABLE AWS_Route53_values
 CREATE INDEX AWS_record_id
   ON AWS_Route53_values (AWS_record_id);
 
-CREATE TABLE DNS_Park
-(
-  record_id   MEDIUMINT(8) UNSIGNED PRIMARY KEY  NOT NULL
-  COMMENT 'DNS Park host id',
-  domain_id   INT(11)                            NOT NULL
-  COMMENT 'DNS PArk domain id',
-  rname       VARCHAR(54)                        NOT NULL
-  COMMENT 'host name to update',
-  ttl         INT(11)                            NOT NULL
-  COMMENT 'Time to live value for host',
-  rtype       VARCHAR(10)                        NOT NULL
-  COMMENT 'DNS Recod type indicator',
-  rdata       VARCHAR(256)                       NOT NULL
-  COMMENT 'Mostly the ip address but depends on the rtype above',
-  dynamic     ENUM ('N', 'Y') DEFAULT 'N'        NOT NULL
-  COMMENT 'Dynamically updated hosts',
-  readonly    ENUM ('N', 'Y')                    NOT NULL
-  COMMENT 'Y or N to indicate writeable',
-  active      ENUM ('N', 'Y')                    NOT NULL
-  COMMENT 'Most likely all records are active but ...',
-  ordername   VARCHAR(43) COMMENT 'Not sure what this field is about',
-  auth        ENUM ('1')                         NOT NULL
-  COMMENT 'No clue but seems to be always 1',
-  last_update DATETIME                           NOT NULL
-  COMMENT 'Date of the last update'
-);
-CREATE INDEX routers_ordername_idx
-  ON DNS_Park (ordername);
-
 CREATE TABLE ip_address
 (
   address_id INT(11) PRIMARY KEY NOT NULL

@@ -19,14 +19,14 @@ def list_resource_record_sets(client, zone_id):
     return client.list_resource_record_sets(HostedZoneId=zone_id)
 
 
-def update(db, router_name, new_address):
+def update(db, router_name, address):
     key, password, base_url = db.get_api_key('AWS_Route53')
 
     route53 = get_session_client(key, password)
 
-    names = db.get_names_to_update_aws(router_name, new_address)
+    names = db.get_names_to_update_aws(router_name, address)
 
-    if names is None:
+    if len(names) == 0:
         print("No updates to process")
         return
 
