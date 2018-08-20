@@ -41,7 +41,7 @@ def update(db, router_name, address):
                 'Name': name[0],
                 'Type': name[1],
                 'TTL': name[2],
-                'ResourceRecords': [{'Value': new_address}]
+                'ResourceRecords': [{'Value': address}]
             }
         })
 
@@ -51,13 +51,13 @@ def update(db, router_name, address):
 
                 reply = route53.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch=batch)
                 if reply['ResponseMetadata']['HTTPStatusCode'] == 200:
-                    db.update_aws_values(name[3], new_address, reply['ChangeInfo']['SubmittedAt'])
+                    db.update_aws_values(name[3], address, reply['ChangeInfo']['SubmittedAt'])
                 changes = []
         except IndexError:
             batch = {'Comment': 'Change by pyDNSUpdate issued by OCSNET', 'Changes': changes}
             reply = route53.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch=batch)
             if reply['ResponseMetadata']['HTTPStatusCode'] == 200:
-                db.update_aws_values(name[3], new_address, reply['ChangeInfo']['SubmittedAt'])
+                db.update_aws_values(name[3], address, reply['ChangeInfo']['SubmittedAt'])
 
         count += 1
     db.db.commit()
