@@ -7,11 +7,17 @@ import dns.update
 __author__ = 'tlo'
 
 
-def lookup(hostname):
-    return dns.resolver.query(hostname, 'A')
+def lookup(hostname, ip_version):
+    if ip_version == 4:
+        return dns.resolver.query(hostname, 'A')
+    else:
+        try:
+            return dns.resolver.query(hostname, 'AAAA')
+        except dns.resolver.NoAnswer:
+            return None
 
 
-def update(db, host_name, new_address):
+def update(db, host_name, new_address, ip_version=4):
     key, password, base_url = db.get_api_key('DNS_Eclipse')
 
     keyring = tsig.from_text({key: password})
@@ -25,17 +31,18 @@ def update(db, host_name, new_address):
 
         fqdn = name[0] + '.ocsnet.com.'
 
-        answer = lookup(fqdn)
+        answer = lookup(fqdn, ip_version)
+        rr_update = dns.update.Update('ocsnet.com.', keyring=keyring, keyalgorithm=dns.tsig.HMAC_SHA256)
 
         for index in range(0, len(new_address)):
+            if answer:
+                temp = answer.rrset.items[index].address
+                if temp not in new_address:
+                    rr_update.delete(fqdn, 'A', temp)
+                    rr_update.add(fqdn, 86400, 'A', new_address[index])
 
-            temp = answer.rrset.items[index].address
-            if temp not in new_address:
-                rr_update = dns.update.Update('ocsnet.com.', keyring=keyring, keyalgorithm=dns.tsig.HMAC_SHA256)
+            else:
+                rr_update.add(fqdn, 86400, 'AAAA', new_address[index])
 
-                rr_update.delete(fqdn, 'A', temp)
-                rr_update.add(fqdn, 86400, 'A', new_address[index])
-
-                response = dns.query.udp(rr_update, '198.147.254.14')
-
-                print(response)
+            response = dns.query.udp(rr_update, '198.147.254.14')
+            print(response)

@@ -8,6 +8,8 @@ requests = "*"
 boto3 = "*"
 mysql-connector-python = "*"
 dnspython = "*"
+setuptools = "==40.6.2"
+easysnmp = "*"
 
 [dev-packages]
 

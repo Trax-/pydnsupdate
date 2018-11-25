@@ -15,4 +15,4 @@
 # Remove bin directory from tracked repo
 bin/
 
-.my.cnf
+.pydnsupdate.cnf
