@@ -48,8 +48,12 @@ class DbData(object):
 
             db_row_count = self.get_row_count_by_zone_id(zone_id)
             aws_row_count = zone['ResourceRecordSetCount'] + 3  # Add 3 for NS records
+
+            if zone_id == 1 or zone_id == 3:
+                aws_row_count += 4  # Accounts for the different way AWS stores multi record recordsets
+
             if zone_id == 2:  # Add 1 more for MX record if ocsnet.com (zone_id=2)
-                aws_row_count += 1
+                aws_row_count += 6
 
             if aws_row_count != db_row_count:
 
@@ -99,9 +103,12 @@ class DbData(object):
         self.cursorquery.execute("SELECT * FROM latest")
         return self.cursorquery.fetchall()
 
-    def get_names_to_update_aws(self, name, new_address):
+    def get_names_to_update_aws(self, name, new_address, ip_version=4):
 
-        self.cursorquery.callproc('get_aws_names_to_update', (name, new_address[0], new_address[1]))
+        if ip_version == 4:
+            self.cursorquery.callproc('get_aws_names_to_update', (name, new_address[0], new_address[1]))
+        else:
+            self.cursorquery.callproc('get_aws_names_to_update6', (name, new_address[0], new_address[1]))
         for result in self.cursorquery.stored_results():
             if result.with_rows:
                 return result.fetchall()
@@ -150,11 +157,12 @@ class DbData(object):
             self.cursorinput.execute(sql)
             self.db.commit()
 
-    def insert_new(self, router_id, new_address):
+    def insert_new(self, router_id, new_address, ip_version=4):
 
-        for index in range(0, len(new_address)):
-            temp = new_address[index]
-            self.cursorquery.callproc('do_internal_update', (router_id, temp))
+        if ip_version == 4:
+            self.cursorquery.callproc('do_internal_update', (router_id, new_address[0], new_address[1]))
+        else:
+            self.cursorquery.callproc('do_internal_update6', (router_id, new_address[0], new_address[1]))
             self.db.commit()
 
     def update_aws_values(self, value_id, router_address, last_update):
