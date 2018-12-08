@@ -36,13 +36,21 @@ def update(db, host_name, new_address, ip_version=4):
 
         for index in range(0, len(new_address)):
             if answer:
-                temp = answer.rrset.items[index].address
-                if temp not in new_address:
-                    rr_update.delete(fqdn, 'A', temp)
-                    rr_update.add(fqdn, 86400, 'A', new_address[index])
+                if ip_version == 4:
+                    temp = answer.rrset.items[index].address
+                    if temp not in new_address:
+                        rr_update.delete(fqdn, 'A', temp)
+                        rr_update.add(fqdn, 86400, 'A', new_address[index])
+                        response = dns.query.udp(rr_update, '198.147.254.14')
+                        print(response)
 
-            else:
-                rr_update.add(fqdn, 86400, 'AAAA', new_address[index])
+                else:
+                    temp = answer.rrset.items[index].address
+                    if temp not in new_address:
+                        rr_update.delete(fqdn, 'AAAA', temp)
+                        rr_update.add(fqdn, 86400, 'AAAA', new_address[index])
+                        response = dns.query.udp(rr_update, '198.147.254.14')
+                        print(response)
 
-            response = dns.query.udp(rr_update, '198.147.254.14')
-            print(response)
+                    # else:
+                    #     rr_update.add(fqdn, 86400, 'AAAA', new_address[index])

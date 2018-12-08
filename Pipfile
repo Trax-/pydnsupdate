@@ -5,11 +5,12 @@ name = "pypi"
 
 [packages]
 requests = "*"
-boto3 = "*"
+boto3 = "==1.9.61"
 mysql-connector-python = "*"
 dnspython = "*"
 setuptools = "==40.6.2"
 easysnmp = "*"
+pytest = "*"
 
 [dev-packages]
 

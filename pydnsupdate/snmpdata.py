@@ -28,7 +28,7 @@ def get_ip6_addresses(sess):
         ipv6addresses = list(map(int, item.oid_index.split('.')[2:]))
 
         for idx in range(0, len(ipv6addresses), 2):
-            if ipv6addresses[idx + 1] == 67:
+            if ipv6addresses[idx + 1] == 66:
                 hexlist.append(f'{0:02x}' + f'{1:02x}')
             else:
                 hexlist.append(f'{ipv6addresses[idx]:02x}' + f'{ipv6addresses[idx + 1]:02x}')

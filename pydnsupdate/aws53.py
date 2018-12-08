@@ -44,7 +44,7 @@ def update(db, router_name, address, ip_version=4):
                 'Name': name[0],
                 'Type': name[1],
                 'TTL': name[2],
-                'ResourceRecords': [{'Value': address}]
+                'ResourceRecords': [{'Value': address[1]}]
             }
         })
 
