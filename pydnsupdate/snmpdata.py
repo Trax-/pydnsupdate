@@ -36,8 +36,7 @@ def get_ip6_addresses(sess):
 
         result = ipaddress.IPv6Address(
             f'{hexlist[0]}{hexlist[1]}:{hexlist[2]}{hexlist[3]}:{hexlist[4]}{hexlist[5]}:{hexlist[6]}{hexlist[7]}:'
-            f'{hexlist[8]}{hexlist[9]}:{hexlist[10]}{hexlist[11]}:{hexlist[12]}{hexlist[13]}:{hexlist[14]}{hexlist[
-                15]}')
+            f'{hexlist[8]}{hexlist[9]}:{hexlist[10]}{hexlist[11]}:{hexlist[12]}{hexlist[13]}:{hexlist[14]}{hexlist[15]}')
 
         ip_addresses.append(result.compressed)
         hexlist = []
