@@ -1,5 +1,5 @@
-from easysnmp import Session
 import ipaddress
+from easysnmp import Session
 
 
 def get_session(name, version=2):
@@ -17,7 +17,8 @@ def get_ip4_addresses(sess):
 
 
 def get_ip6_addresses(sess):
-    hexlist = list()
+    hexlist = []
+    ip_addresses = []
 
     items = sess.walk('IP-MIB::ipAddressType.2.16.38')
 
@@ -27,10 +28,18 @@ def get_ip6_addresses(sess):
 
         ipv6addresses = list(map(int, item.oid_index.split('.')[2:]))
 
-        for idx in range(0, len(ipv6addresses), 2):
-            if ipv6addresses[idx + 1] == 66:
-                hexlist.append(f'{0:02x}' + f'{1:02x}')
-            else:
-                hexlist.append(f'{ipv6addresses[idx]:02x}' + f'{ipv6addresses[idx + 1]:02x}')
-    return list({str(ipaddress.IPv6Address(str.join(':', hexlist)[:39])),
-                 str(ipaddress.IPv6Address(str.join(':', hexlist)[40:]))})
+        for octet in ipv6addresses:
+            hexlist.append(f'{octet:02x}')
+        if hexlist[8:14] == ['00', '00', '00', '00', '00', '00'] and ipv6addresses[15] != 1:
+            hexlist.pop(15)
+            hexlist.append(f'{1:02x}')
+
+        result = ipaddress.IPv6Address(
+            f'{hexlist[0]}{hexlist[1]}:{hexlist[2]}{hexlist[3]}:{hexlist[4]}{hexlist[5]}:{hexlist[6]}{hexlist[7]}:'
+            f'{hexlist[8]}{hexlist[9]}:{hexlist[10]}{hexlist[11]}:{hexlist[12]}{hexlist[13]}:{hexlist[14]}{hexlist[
+                15]}')
+
+        ip_addresses.append(result.compressed)
+        hexlist = []
+
+    return ip_addresses

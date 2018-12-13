@@ -19,50 +19,44 @@ def list_resource_record_sets(client, zone_id):
     return client.list_resource_record_sets(HostedZoneId=zone_id)
 
 
-def update(db, router_name, address, ip_version=4):
+def update(db, new_addresses, qtype='A'):
     key, password, base_url = db.get_api_key('AWS_Route53')
 
     route53 = get_session_client(key, password)
 
-    if ip_version == 6:
-        names = db.get_names_to_update_aws(router_name, address, ip_version)
-    else:
-        names = db.get_names_to_update_aws(router_name, address)
+    names = db.get_names_to_update_aws(qtype)
 
     if len(names) == 0:
-        print("No updates to process")
-        return
+        names = db.get_names_to_update_aws6()
 
     changes = []
     count = 0
 
-    for name in names:
-        zone_id = name[4]
+    for name, qtype, ttl, zone_id in names:
         changes.append({
             'Action': 'UPSERT',
             'ResourceRecordSet': {
-                'Name': name[0],
-                'Type': name[1],
-                'TTL': name[2],
-                'ResourceRecords': [{'Value': address[1]}]
+                'Name': name,
+                'Type': qtype,
+                'TTL': ttl,
+                'ResourceRecords': [{'Value': new_addresses[0]}, {'Value': new_addresses[1]}],
             }
         })
-
         try:
-            if count + 1 <= len(names) and zone_id != names[count + 1][4]:
+            if count + 1 <= len(names) and zone_id != names[count + 1][3]:
                 batch = {'Comment': 'Change by pyDNSUpdate issued by OCSNET', 'Changes': changes}
 
                 reply = route53.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch=batch)
                 if reply['ResponseMetadata']['HTTPStatusCode'] == 200:
-                    db.update_aws_values(name[3], address, reply['ChangeInfo']['SubmittedAt'])
+                    db.update_aws_values(name, new_addresses, reply['ChangeInfo']['SubmittedAt'])
                 changes = []
         except IndexError:
             batch = {'Comment': 'Change by pyDNSUpdate issued by OCSNET', 'Changes': changes}
             reply = route53.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch=batch)
             if reply['ResponseMetadata']['HTTPStatusCode'] == 200:
-                db.update_aws_values(name[3], address, reply['ChangeInfo']['SubmittedAt'])
-
+                db.update_aws_values(name, new_addresses, reply['ChangeInfo']['SubmittedAt'])
         count += 1
+
     db.db.commit()
 
 

@@ -19,6 +19,7 @@ class DbData(object):
                 print("Non existent database")
             else:
                 print(err)
+                quit()
 
         self.cursorquery = self.db.cursor()
         self.cursorinput = self.db.cursor()
@@ -34,6 +35,8 @@ class DbData(object):
 
         zones = aws53.list_hosted_zones(route53)
 
+        zone_id = 0
+
         if self.get_zone_count() != aws53.get_hosted_zone_count(route53):
             self.insert_zone_aws(zones)
 
@@ -43,8 +46,6 @@ class DbData(object):
             for result in self.cursorquery.stored_results():
                 if result.with_rows:
                     zone_id = result.fetchone()[0]
-                else:
-                    zone_id = 0
 
             db_row_count = self.get_row_count_by_zone_id(zone_id)
             aws_row_count = zone['ResourceRecordSetCount'] + 3  # Add 3 for NS records
@@ -91,7 +92,7 @@ class DbData(object):
     def get_api_key(self, service_table):
 
         sql = f"SELECT api_key_id, api_password, base_url " \
-              f"FROM service_api WHERE service_table_name = '{service_table}'"
+            f"FROM service_api WHERE service_table_name = '{service_table}'"
 
         self.cursorquery.execute(sql)
         if self.cursorquery.rowcount == 0:
@@ -103,12 +104,16 @@ class DbData(object):
         self.cursorquery.execute("SELECT * FROM latest")
         return self.cursorquery.fetchall()
 
-    def get_names_to_update_aws(self, name, new_address, ip_version=4):
+    def get_names_to_update_aws(self, qtype):
+        self.cursorquery.callproc('get_aws_names_to_update', (qtype,))
+        for result in self.cursorquery.stored_results():
+            if result.with_rows:
+                return result.fetchall()
+            else:
+                return None
 
-        if ip_version == 4:
-            self.cursorquery.callproc('get_aws_names_to_update', (name, new_address[0], new_address[1]))
-        else:
-            self.cursorquery.callproc('get_aws_names_to_update6', (name, new_address[0], new_address[1]))
+    def get_names_to_update_aws6(self):
+        self.cursorquery.callproc('get_aws_names_to_update6')
         for result in self.cursorquery.stored_results():
             if result.with_rows:
                 return result.fetchall()
@@ -151,8 +156,8 @@ class DbData(object):
                 comment = ''
 
             sql = f"REPLACE INTO AWS_Route53_zones (zone_id, name, record_count, private_zone, comment) " \
-                  f"VALUES ('{zone['Id']}', '{zone['Name']}', {zone['ResourceRecordSetCount']}, " \
-                  f"'{zone['Config']['PrivateZone']}', '{comment}')"
+                f"VALUES ('{zone['Id']}', '{zone['Name']}', {zone['ResourceRecordSetCount']}, " \
+                f"'{zone['Config']['PrivateZone']}', '{comment}')"
 
             self.cursorinput.execute(sql)
             self.db.commit()
@@ -163,13 +168,13 @@ class DbData(object):
             self.cursorquery.callproc('do_internal_update', (router_id, new_address[0], new_address[1]))
         else:
             self.cursorquery.callproc('do_internal_update6', (router_id, new_address[0], new_address[1]))
-            self.db.commit()
+        self.db.commit()
 
     def update_aws_values(self, value_id, router_address, last_update):
 
         sql = f"UPDATE AWS_Route53_values SET value = '{router_address[1]}'," \
             f" last_update = '{last_update.strftime('%Y-%m-%d %H:%M:%S')}' WHERE " \
-              f"value_id = '{value_id}' "
+            f"value_id = '{value_id}' "
 
         self.cursorinput.execute(sql)
         self.db.commit()
