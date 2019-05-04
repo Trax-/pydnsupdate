@@ -11,7 +11,7 @@ dnspython = "*"
 setuptools = "==40.6.2"
 easysnmp = "*"
 pytest = "*"
-urllib3 = "==1.25.2"
+urllib3 = ">1.24.1"
 
 [dev-packages]
 
