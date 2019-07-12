@@ -37,7 +37,7 @@ class DbData(object):
 
         zone_id = 0
 
-        if self.get_zone_count() != aws53.get_hosted_zone_count(route53):
+        if self.get_zone_count() != len(zones['HostedZones']):
             self.insert_zone_aws(zones)
 
         for zone in zones['HostedZones']:
@@ -48,13 +48,13 @@ class DbData(object):
                     zone_id = result.fetchone()[0]
 
             db_row_count = self.get_row_count_by_zone_id(zone_id)
-            aws_row_count = zone['ResourceRecordSetCount'] + 3  # Add 3 for NS records
+            aws_row_count = zone['ResourceRecordSetCount'] + 4  # Add 3 for NS records
 
             if zone_id == 1 or zone_id == 3:
-                aws_row_count += 4  # Accounts for the different way AWS stores multi record recordsets
+                aws_row_count += 7  # Accounts for the different way AWS stores multi record recordsets
 
             if zone_id == 2:  # Add 1 more for MX record if ocsnet.com (zone_id=2)
-                aws_row_count += 6
+                aws_row_count += 8
 
             if aws_row_count != db_row_count:
 
