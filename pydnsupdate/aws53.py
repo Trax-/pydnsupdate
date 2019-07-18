@@ -48,13 +48,13 @@ def update(db, new_addresses, qtype='A'):
 
                 reply = route53.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch=batch)
                 if reply['ResponseMetadata']['HTTPStatusCode'] == 200:
-                    db.update_aws_values(name, new_addresses, reply['ChangeInfo']['SubmittedAt'])
+                    db.update_aws_values(name, qtype, new_addresses, reply['ChangeInfo']['SubmittedAt'])
                 changes = []
         except IndexError:
             batch = {'Comment': 'Change by pyDNSUpdate issued by OCSNET', 'Changes': changes}
             reply = route53.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch=batch)
             if reply['ResponseMetadata']['HTTPStatusCode'] == 200:
-                db.update_aws_values(name, new_addresses, reply['ChangeInfo']['SubmittedAt'])
+                db.update_aws_values(name, qtype, new_addresses, reply['ChangeInfo']['SubmittedAt'])
         count += 1
 
     db.db.commit()
