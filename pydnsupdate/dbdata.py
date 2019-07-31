@@ -170,13 +170,19 @@ class DbData(object):
             self.cursorquery.callproc('do_internal_update6', (router_id, new_address[0], new_address[1]))
         self.db.commit()
 
-    def update_aws_values(self, value_id, router_address, last_update):
+    def update_aws_values(self, name, router_address, last_update, addr_type):
 
-        sql = f"UPDATE AWS_Route53_values SET value = '{router_address[1]}'," \
-            f" last_update = '{last_update.strftime('%Y-%m-%d %H:%M:%S')}' WHERE " \
-            f"value_id = '{value_id}' "
+        sql = f"SELECT record_id FROM AWS_Route53 WHERE name = '{name}' and type = '{addr_type}'"
+        self.cursorquery.execute(sql)
+        record = self.cursorquery.fetchall()
+        counter = 0
+        for address in router_address:
+            sql = f"UPDATE AWS_Route53 SET value = '{address}'," \
+                  f" last_update = '{last_update.strftime('%Y-%m-%d %H:%M:%S')}' WHERE " \
+                  f"record_id = '{record[counter][0]}'"
 
-        self.cursorinput.execute(sql)
+            self.cursorinput.execute(sql)
+            counter += 1
         self.db.commit()
 
     def close(self):
