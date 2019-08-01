@@ -7,7 +7,7 @@ import dns.update
 __author__ = 'tlo'
 
 
-def lookup(hostname, qtype='A'):
+def lookup(hostname, qtype):
     addr_list = []
 
     try:
@@ -19,7 +19,7 @@ def lookup(hostname, qtype='A'):
         return None
 
 
-def update(db, host_name, new_address, qtype='A'):
+def update(db, host_name, new_address, qtype):
     key, password, base_url = db.get_api_key('DNS_Eclipse')
 
     keyring = tsig.from_text({key: password})
@@ -45,7 +45,7 @@ def update(db, host_name, new_address, qtype='A'):
                     print(response)
 
 
-def aws_lookup(hostname, qtype='A'):
+def aws_lookup(hostname, qtype):
     address_list = []
 
     try:

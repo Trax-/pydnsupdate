@@ -37,8 +37,8 @@ def main():
     for address4 in router_address_list_ipv4:
         if address4 not in saved_address_list_ipv4:
             aws53.update(db, router_address_list_ipv4, 'A')
-            homedns.update(db, router_name, router_address_list_ipv4)
-            db.insert_new(router_id, router_address_list_ipv4)
+            homedns.update(db, router_name, router_address_list_ipv4, 'A')
+            db.insert_new(router_id, router_address_list_ipv4, 'A')
 
     for address6 in router_address_list_ipv6:
         if address6 not in saved_address_list_ipv6:

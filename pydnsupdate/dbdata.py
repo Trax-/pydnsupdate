@@ -162,9 +162,9 @@ class DbData(object):
             self.cursorinput.execute(sql)
             self.db.commit()
 
-    def insert_new(self, router_id, new_address, ip_version=4):
+    def insert_new(self, router_id, new_address, ip_version):
 
-        if ip_version == 4:
+        if ip_version == 'A':
             self.cursorquery.callproc('do_internal_update', (router_id, new_address[0], new_address[1]))
         else:
             self.cursorquery.callproc('do_internal_update6', (router_id, new_address[0], new_address[1]))
@@ -173,7 +173,7 @@ class DbData(object):
     def update_aws_values(self, name, router_address, last_update, addr_type):
 
         sql = f"SELECT record_id FROM AWS_Route53 WHERE name = '{name}' and type = '{addr_type}'"
-        self.cursorquery.execute(sql)
+        numrows = self.cursorquery.execute(sql)
         record = self.cursorquery.fetchall()
         counter = 0
         for address in router_address:
