@@ -20,6 +20,7 @@ def list_resource_record_sets(client, zone_id):
 
 
 def update(db, new_addresses, qtype):
+
     key, password, base_url = db.get_api_key('AWS_Route53')
 
     route53 = get_session_client(key, password)
@@ -42,10 +43,11 @@ def update(db, new_addresses, qtype):
                 'ResourceRecords': [{'Value': new_addresses[0]}, {'Value': new_addresses[1]}],
             }
         })
+
+        batch = {'Comment': 'Change by pyDNSUpdate issued by OCSNET', 'Changes': changes}
+
         try:
             if count + 1 <= len(names) and zone_id != names[count + 1][3]:
-                batch = {'Comment': 'Change by pyDNSUpdate issued by OCSNET', 'Changes': changes}
-
                 reply = route53.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch=batch)
                 if reply['ResponseMetadata']['HTTPStatusCode'] == 200:
                     for change in changes:
@@ -53,7 +55,6 @@ def update(db, new_addresses, qtype):
                                              reply['ChangeInfo']['SubmittedAt'], qtype)
                 changes = []
         except IndexError:
-            batch = {'Comment': 'Change by pyDNSUpdate issued by OCSNET', 'Changes': changes}
             reply = route53.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch=batch)
             if reply['ResponseMetadata']['HTTPStatusCode'] == 200:
                 for change in changes:
