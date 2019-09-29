@@ -4,7 +4,7 @@ __author__ = 'Trevor Obermann'
 
 setup(
     name='pydnsupdate',
-    version='2.11',
+    version='2.12',
     description='Dynamic DNS updater program',
     url='tlo@ocelot:/srv/git/PyDNSUpdate.git',
     author='Trevor Obermann',
