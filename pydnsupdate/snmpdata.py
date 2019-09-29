@@ -1,4 +1,3 @@
-import ipaddress
 from easysnmp import Session
 
 
@@ -18,11 +17,12 @@ def get_ip4_addresses(sess):
 
 
 def get_ip6_addresses(sess):
+
     ip_addresses = []
 
-    items = sess.get('hrSWRunParameters.39051')
+    items = sess.get('hrSWRunParameters.41411')
     ip_addresses.append(items.value.split()[6])
-    items = sess.get('hrSWRunParameters.39313')
+    items = sess.get('hrSWRunParameters.42041')
     ip_addresses.append(items.value.split()[6])
 
     return ip_addresses
