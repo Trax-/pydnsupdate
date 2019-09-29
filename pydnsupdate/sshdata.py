@@ -6,7 +6,7 @@ def get_client(router):
     ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     ssh_client.get_host_keys()
 
-    ssh_client.connect(hostname=router, username='tlo')
+    ssh_client.connect(hostname=router, username='ocelot')
 
     return ssh_client
 
