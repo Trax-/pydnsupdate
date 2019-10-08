@@ -12,7 +12,8 @@ tests/
 /*.egg-info
 
 # Pycharm project file
-/.idea/*
+.idea/*
+.idea/dataSources.local.xml
 
 # Remove bin directory from tracked repo
 bin/
