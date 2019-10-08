@@ -12,6 +12,7 @@ easysnmp = "*"
 pytest = "*"
 urllib3 = "==1.25.2"
 botocore = "*"
+paramiko = "*"
 
 [dev-packages]
 
