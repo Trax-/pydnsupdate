@@ -14,7 +14,6 @@ def get_client(router):
 def get_all_addresses(client):
     stdin, stdout, stderr = client.exec_command('./addresses.sh')
     result = stdout.read().decode().split('\n')
-    # result1 = result.decode()
     del result[4]
     return result
 
