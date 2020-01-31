@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 boto3 = "==1.9.150"
-mysql-connector-python = "*"
+mysql-connector-python = "==8.0.19"
 dnspython = "*"
 setuptools = "==41.0.1"
 easysnmp = "*"
@@ -13,8 +13,9 @@ pytest = "*"
 urllib3 = "==1.25.2"
 botocore = "*"
 paramiko = "*"
+protobuf = "==3.11.2"
 
 [dev-packages]
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
