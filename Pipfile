@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-boto3 = "==1.9.150"
+boto3 = "==1.12.43"
 mysql-connector-python = "==8.0.19"
 dnspython = "*"
 setuptools = "==41.0.1"
@@ -13,8 +13,10 @@ pytest = "*"
 urllib3 = "==1.25.2"
 botocore = "*"
 paramiko = "*"
-protobuf = "==3.6.1"
+protobuf = "==3.11.3"
 asn1crypto = "==1.3.0"
+docutils = "==0.16"
+zipp = "==3.1.0"
 
 [dev-packages]
 
