@@ -1,4 +1,4 @@
-from pydnsupdate import aws53, dbdata, homedns, snmpdata, sshdata
+from pydnsupdate import aws53, dbdata, homedns, sshdata
 
 __author__ = 'tlo'
 

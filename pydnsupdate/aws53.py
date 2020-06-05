@@ -3,10 +3,6 @@ from boto3.session import Session
 __author__ = 'tlo'
 
 
-def get_hosted_zone(key, password, base_url):
-    pass
-
-
 def get_hosted_zone_count(client):
     return client.get_hosted_zone_count()['HostedZoneCount']
 
