@@ -4,16 +4,16 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-boto3 = "==1.13.23"
+boto3 = "*"
 mysql-connector-python = "*"
 dnspython = "*"
-setuptools = "==47.1.1"
+setuptools = "*"
 easysnmp = "*"
 pytest = "*"
-urllib3 = "==1.25.9"
+urllib3 = "*"
 botocore = "*"
 paramiko = "*"
-pyparsing = "==3.0.0a1"
+pyparsing = "*"
 pillow = "*"
 
 [dev-packages]
