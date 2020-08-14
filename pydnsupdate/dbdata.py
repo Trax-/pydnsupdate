@@ -144,7 +144,8 @@ class DbData(object):
                 return 0
 
     def get_zone_count(self):
-        self.cursorquery.execute("SELECT COUNT(zone_id) FROM AWS_Route53_zones")
+        self.cursorquery.execute(
+            "SELECT COUNT(zone_id) FROM AWS_Route53_zones")
         return self.cursorquery.fetchone()[0]
 
     def insert_zone_aws(self, zones):
