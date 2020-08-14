@@ -1,8 +1,5 @@
-import dns.query
-import dns.resolver
-import dns.tsig
+import dns
 import dns.tsigkeyring as tsig
-import dns.update
 
 __author__ = 'tlo'
 
