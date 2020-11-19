@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 boto3 = "*"
 mysql-connector-python = "*"
-dnspython = "*"
+dnspython = "==2.1.0rc1"
 setuptools = "*"
 easysnmp = "*"
 pytest = "*"
@@ -15,6 +15,14 @@ botocore = "*"
 paramiko = "*"
 pyparsing = "*"
 pillow = "*"
+cryptography = "==3.2.1"
+asn1crypto = "==1.4.0"
+atomicwrites = "==1.4.0"
+docutils = "==0.16"
+more-itertools = "==8.6.0"
+pluggy = "==1.0.0.dev0"
+wcwidth = "==0.2.5"
+zipp = "==3.4.0"
 
 [dev-packages]
 
