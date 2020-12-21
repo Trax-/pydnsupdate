@@ -20,11 +20,12 @@ asn1crypto = "==1.4.0"
 atomicwrites = "==1.4.0"
 docutils = "==0.16"
 more-itertools = "==8.6.0"
-pluggy = "==1.0.0.dev0"
+pluggy = "*"
 wcwidth = "==0.2.5"
 zipp = "==3.4.0"
+asyncssh = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"

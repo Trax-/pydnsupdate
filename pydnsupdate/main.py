@@ -1,4 +1,8 @@
-from pydnsupdate import aws53, dbdata, homedns, sshdata
+import asyncio
+import asyncssh
+import sys
+
+from pydnsupdate import aws53, dbdata, homedns
 
 __author__ = 'tlo'
 
@@ -13,9 +17,14 @@ def main():
     for row in rows:
         saved_address_list.append(row[4])
 
-    ssh_session = sshdata.get_client(router_name)
-    router_address_list = sshdata.get_all_addresses(ssh_session)
-    ssh_session.close()
+    try:
+        router_address_list = asyncio.get_event_loop().run_until_complete(run_client(router_name))
+    except (OSError, asyncssh.Error) as exc:
+        sys.exit('SSH connection failed: ' + str(exc))
+
+    # ssh_session = sshdata.get_client(router_name)
+    # router_address_list = sshdata.get_all_addresses(ssh_session)
+    # ssh_session.close()
 
     for ip_address in router_address_list:
 
@@ -42,6 +51,13 @@ def main():
 
     db.close()
 
+
+async def run_client(router_name):
+    async with asyncssh.connect(router_name, username='ocelot') as conn:
+        result = await conn.run('./addresses.sh', check=True)
+        result = result.stdout.split('\n')
+        del result[4]
+        return result
 
 if __name__ == '__main__':
     main()
