@@ -1,0 +1,6 @@
+asyncssh~=2.4.2
+boto3~=1.16.36
+mysql-connector-python~=8.0.22
+dnspython~=2.1.0rc1
+paramiko~=2.7.2
+easysnmp~=0.2.5
