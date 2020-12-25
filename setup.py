@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     entry_points={'console_scripts': ['pydnsupdate = pydnsupdate.main:main']},
     install_requires=[
-        'requests', 'boto3', 'mysql-connector-python', 'dnspython'
+        'requests', 'boto3', 'mysql-connector-python', 'dnspython', 'asyncssh'
     ],
     zip_safe=False
 )
