@@ -15,7 +15,7 @@ botocore = "*"
 paramiko = "*"
 pyparsing = "*"
 pillow = "*"
-cryptography = "==3.2.1"
+cryptography = "==3.3.1"
 asn1crypto = "==1.4.0"
 atomicwrites = "==1.4.0"
 docutils = "==0.16"
@@ -23,7 +23,7 @@ more-itertools = "==8.6.0"
 pluggy = "*"
 wcwidth = "==0.2.5"
 zipp = "==3.4.0"
-asyncssh = "*"
+asyncssh = "==2.5.0"
 
 [dev-packages]
 
