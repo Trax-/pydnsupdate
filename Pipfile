@@ -24,6 +24,7 @@ pluggy = "*"
 wcwidth = "==0.2.5"
 zipp = "==3.4.0"
 asyncssh = "==2.5.0"
+pip-review = "*"
 
 [dev-packages]
 
