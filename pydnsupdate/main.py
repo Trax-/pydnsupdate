@@ -22,10 +22,6 @@ def main():
     except (OSError, asyncssh.Error) as exc:
         sys.exit('SSH connection failed: ' + str(exc))
 
-    # ssh_session = sshdata.get_client(router_name)
-    # router_address_list = sshdata.get_all_addresses(ssh_session)
-    # ssh_session.close()
-
     for ip_address in router_address_list:
 
         if ip_address.startswith('127') or ip_address.startswith('198') or ip_address.startswith('192'):
