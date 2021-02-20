@@ -21,9 +21,9 @@ def update(db, new_addresses, qtype):
 
     route53 = get_session_client(key, password)
 
-    names = db.get_names_to_update_aws(qtype)
-
-    if len(names) == 0:
+    if qtype == 'A':
+        names = db.get_names_to_update_aws(qtype)
+    else:
         names = db.get_names_to_update_aws6()
 
     changes = []

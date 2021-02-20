@@ -168,7 +168,7 @@ class DbData(object):
         if ip_version == 'A':
             self.cursorquery.callproc('do_internal_update', (router_id, new_address[0], new_address[1]))
         else:
-            self.cursorquery.callproc('do_internal_update6', (router_id, new_address[0], new_address[1]))
+            self.cursorquery.callproc('do_internal_update6', (router_id, new_address))
         self.db.commit()
 
     def update_aws_values(self, name, router_address, last_update, addr_type):

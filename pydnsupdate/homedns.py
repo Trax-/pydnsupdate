@@ -1,4 +1,4 @@
-import dns
+import dns.update
 import dns.tsigkeyring as tsig
 
 __author__ = 'tlo'
@@ -8,7 +8,7 @@ def lookup(hostname, qtype):
     addr_list = []
 
     try:
-        answers = dns.resolver.query(hostname, qtype)
+        answers = dns.resolver.resolve(hostname, qtype)
         for rdata in answers:
             addr_list.append(rdata.address)
         return addr_list
@@ -25,7 +25,7 @@ def update(db, host_name, new_address, qtype):
 
     for name in names:
 
-        if name[0][0:6] == 'ocsnet' or name[0] == 'www':
+        if name[0][0:6] == 'ocsnet' or name[0] == 'www' or name[0] == 'mx':
             continue
 
         fqdn = name[0] + '.ocsnet.com.'
