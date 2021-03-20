@@ -29,7 +29,7 @@ def main():
 
     router_id = rows[0][2]
 
-    for idx in range(0, 4):
+    for idx in range(0, 2):
         print(f"{router_name}'s listed IP: {saved_address_list[idx]} assigned IP {router_address_list[idx]}")
 
     if router_address_list != saved_address_list:
@@ -38,11 +38,6 @@ def main():
                 aws53.update(db, address4, 'A')
                 db.insert_new(router_id, address4, 'A')
 
-        for address6 in router_address_list[2:4]:
-            if address6 not in saved_address_list:
-                aws53.update(db, router_address_list[2:4], 'AAAA')
-                db.insert_new(router_id, address6, 'AAAA')
-
     db.close()
 
 
@@ -50,7 +45,7 @@ async def run_client(router_name):
     async with asyncssh.connect(router_name, username='ocelot') as conn:
         result = await conn.run('./addresses.sh', check=True)
         result = result.stdout.split('\n')
-        del result[4]
+        del result[2]
         return result
 
 
