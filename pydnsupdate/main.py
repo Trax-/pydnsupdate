@@ -2,7 +2,7 @@ import asyncio
 import asyncssh
 import sys
 
-from pydnsupdate import aws53, dbdata, homedns
+from pydnsupdate import aws53, dbdata
 
 __author__ = 'tlo'
 
@@ -15,7 +15,7 @@ def main():
     saved_address_list = []
 
     for row in rows:
-        saved_address_list.append(row[4])
+        saved_address_list.append(row[2])
 
     try:
         router_address_list = asyncio.get_event_loop().run_until_complete(run_client(router_name))
@@ -27,7 +27,7 @@ def main():
         if ip_address.startswith('127') or ip_address.startswith('198') or ip_address.startswith('192'):
             router_address_list.remove(ip_address)
 
-    router_id = rows[0][2]
+    router_id = rows[0][1]
 
     for idx in range(0, 2):
         print(f"{router_name}'s listed IP: {saved_address_list[idx]} assigned IP {router_address_list[idx]}")

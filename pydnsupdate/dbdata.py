@@ -54,7 +54,7 @@ class DbData(object):
                 aws_row_count += 7  # Accounts for the different way AWS stores multi record recordsets
 
             if zone_id == 2:  # Add 1 more for MX record if ocsnet.com (zone_id=2)
-                aws_row_count += 8
+                aws_row_count += 12
 
             if aws_row_count != db_row_count:
 
