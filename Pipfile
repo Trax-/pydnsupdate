@@ -8,7 +8,7 @@ boto3 = "*"
 mysql-connector-python = "*"
 dnspython = "*"
 setuptools = "*"
-easysnmp = "*"
+#easysnmp = "*"
 pytest = "*"
 urllib3 = "*"
 botocore = "*"
@@ -28,6 +28,7 @@ pip = "*"
 pyflakes = "*"
 pycodestyle = "*"
 mccabe = "==0.7.0"
+protobuf = "==4.21.6"
 
 [dev-packages]
 
