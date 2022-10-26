@@ -12,6 +12,7 @@ tests/
 /*.egg-info
 
 # Pycharm project file
+.fleet/*
 .idea/*
 .idea/dataSources.local.xml
 
