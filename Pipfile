@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-boto3 = "*"
-mysql-connector-python = "*"
+boto3 = "==1.25.1"
+mysql-connector-python = "==8.0.31"
 dnspython = "*"
 setuptools = "*"
 #easysnmp = "*"
@@ -14,7 +14,7 @@ urllib3 = "*"
 botocore = "*"
 pyparsing = "*"
 pillow = "*"
-cryptography = "*"
+cryptography = "==38.0.2"
 asn1crypto = "*"
 atomicwrites = "*"
 docutils = "*"
@@ -28,7 +28,7 @@ pip = "*"
 pyflakes = "*"
 pycodestyle = "*"
 mccabe = "==0.7.0"
-protobuf = "==4.21.6"
+protobuf = "==4.21.8"
 
 [dev-packages]
 
