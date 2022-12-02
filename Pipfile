@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 boto3 = "*"
-mysql-connector-python = "*"
+mariadb-connector-python = "*"
 dnspython = "*"
 setuptools = "*"
 #easysnmp = "*"
