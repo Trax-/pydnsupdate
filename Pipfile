@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 boto3 = "*"
-mariadb= "*"
+mariadb= "==1.1.7"
 dnspython = "*"
 setuptools = "*"
 #easysnmp = "*"
