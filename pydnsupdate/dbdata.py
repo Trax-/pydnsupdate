@@ -10,7 +10,7 @@ class DbData(object):
         try:
             self.db = MySQLConnection(option_files='.pydnsupdate.cnf', force_ipv6=False)
 
-        except maraidb.Error as err:
+        except mariadb.Error as err:
             if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
                 print("Bad password or Username")
             elif err.errno == errorcode.ER_BAD_DB_ERROR:

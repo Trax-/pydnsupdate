@@ -38,7 +38,7 @@ def update(db, host_name, new_address, qtype):
                 rr_update.delete(fqdn, qtype)
                 for addr in new_address:
                     rr_update.add(fqdn, 86400, qtype, addr)
-                    response = dns.query.udp(rr_update, '198.147.254.14')
+                    response = dns.query.udp(rr_update, '198.147.254.33')
                     print(response)
 
 
@@ -46,7 +46,7 @@ def aws_lookup(hostname, qtype):
     address_list = []
 
     try:
-        answers = dns.resolver.query(hostname, qtype)
+        answers = dns.resolver.resolve(hostname, qtype)
         for rdata in answers:
             address_list.append(rdata.address)
         return address_list
