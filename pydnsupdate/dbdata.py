@@ -1,4 +1,4 @@
-import maraidb
+import mariadb
 from . import aws53
 
 __author__ = 'tlo'
@@ -8,9 +8,9 @@ class DbData(object):
     def __init__(self):
 
         try:
-            self.db = MySQLConnection(option_files='.pydnsupdate.cnf', force_ipv6=False)
+            self.db = mariadb.connect(option_files='.pydnsupdate.cnf', force_ipv6=False)
 
-        except maraidb.Error as err:
+        except mariadb.Error as err:
             if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
                 print("Bad password or Username")
             elif err.errno == errorcode.ER_BAD_DB_ERROR:
