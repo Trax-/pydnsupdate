@@ -1,4 +1,4 @@
-import maraidb
+import mariadb
 from . import aws53
 
 __author__ = 'tlo'
