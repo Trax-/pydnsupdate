@@ -30,6 +30,7 @@ pycodestyle = "*"
 mccabe = "*"
 protobuf = "*"
 exceptiongroup = "*"
+requests = "*"
 
 [dev-packages]
 

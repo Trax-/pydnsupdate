@@ -1,0 +1,5 @@
+asyncssh
+boto3
+mariadb
+dnspython
+requests

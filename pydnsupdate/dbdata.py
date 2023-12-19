@@ -8,16 +8,11 @@ class DbData(object):
     def __init__(self):
 
         try:
-            self.db = mariadb.connect(option_files='.pydnsupdate.cnf', force_ipv6=False)
+            self.db = mariadb.connect(default_file='.pydnsupdate.cnf', force_ipv6=False)
 
         except mariadb.Error as err:
-            if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-                print("Bad password or Username")
-            elif err.errno == errorcode.ER_BAD_DB_ERROR:
-                print("Non existent database")
-            else:
-                print(err)
-                quit()
+            print(f'Error connecting to the database {err}')
+            quit()
 
         self.cursorquery = self.db.cursor()
         self.cursorinput = self.db.cursor()
