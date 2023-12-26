@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6b2844c-f265-48bf-9b28-16839ebbf472" name="Default" comment="module updates">
+    <list default="true" id="c6b2844c-f265-48bf-9b28-16839ebbf472" name="Default" comment="Changing DB provider to Mariadb">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbdata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homedns.py" beforeDir="false" afterPath="$PROJECT_DIR$/homedns.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +101,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "settings.qodana",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "settings.editor.splitter.proportion": "0.2804391",
     "vue.rearranger.settings.migration": "true"
   }
@@ -111,23 +109,6 @@
   <component name="QodanaCIConfigService">
     <option name="ciType" value="GITHUB" />
     <option name="path" value="$PROJECT_DIR$/.github/workflows/qodana_code_quality.yml" />
-  </component>
-  <component name="QodanaHighlightedReportService">
-    <option name="localRunNotPublishedPersistedInfo">
-      <LocalReportPersistedInfo>
-        <option name="path" value="/tmp/qodana_output/qodana.sarif.json" />
-        <option name="reportGuid" value="bd5180f5-5685-4290-9369-96c41d4995cc" />
-        <option name="reportName" value="pydnsupdate/qodana/2023-12-19" />
-      </LocalReportPersistedInfo>
-    </option>
-  </component>
-  <component name="QodanaIsSelectedPersistenceService">
-    <option name="selectedOrLoading" value="true" />
-  </component>
-  <component name="QodanaReportsService">
-    <option name="descriptions">
-      <ReportDescription localRun="true" path="/tmp/qodana_output/qodana.sarif.json" reportGuid="bd5180f5-5685-4290-9369-96c41d4995cc" reportId="pydnsupdate/qodana/2023-12-19" />
-    </option>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -147,7 +128,8 @@
       <workItem from="1702998058865" duration="69000" />
       <workItem from="1702998134364" duration="458000" />
       <workItem from="1702998599141" duration="3479000" />
-      <workItem from="1703002396364" duration="1433000" />
+      <workItem from="1703002396364" duration="1497000" />
+      <workItem from="1703600466100" duration="426000" />
     </task>
     <task id="LOCAL-00001" summary="module updates">
       <option name="closed" value="true" />
@@ -157,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703001433995</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changing DB provider to Mariadb">
+      <option name="closed" value="true" />
+      <created>1703003867429</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703003867429</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -187,9 +177,21 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="module updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="module updates" />
+    <MESSAGE value="Changing DB provider to Mariadb" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing DB provider to Mariadb" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
