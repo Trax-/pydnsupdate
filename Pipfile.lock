@@ -267,7 +267,7 @@
             ],
             "index": "pypi",
             "markers": "python_version >= '3.7'",
-            "version": "~> 43.0.1"
+            "version": "~> 44.0.1"
         },
         "dnspython": {
             "hashes": [
