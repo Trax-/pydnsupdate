@@ -1,0 +1,13 @@
+[project]
+name = "pydnsupdate"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "asyncssh>=2.21.0",
+    "boto3>=1.38.27",
+    "dnspython>=2.7.0",
+    "mariadb>=1.1.12",
+    "requests>=2.32.3",
+]
